@@ -10,7 +10,7 @@ export const Layout: FC<PropsWithChildren<MetaProps>> = props => {
 		<>
 			<Meta {...metaProps}>
 				<Header />
-				{children}
+				<main>{children}</main>
 				<Footer />
 			</Meta>
 		</>
