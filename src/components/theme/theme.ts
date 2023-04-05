@@ -1,12 +1,11 @@
-import { zIndex } from './zIndex';
-import { palette } from './palette';
-import { commonFont, typography } from './typography';
+import { zIndex, palette, typography, spacing, classes } from './themeConfig';
 
 export const theme = {
 	palette,
 	typography,
+	spacing,
 	zIndex,
-	commonFont
+	classes
 };
 
 export type Theme = typeof theme;
