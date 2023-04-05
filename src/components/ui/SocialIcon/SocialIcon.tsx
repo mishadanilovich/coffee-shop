@@ -1,5 +1,5 @@
 import { SocialIconProps } from './SocialIcon.interface';
-import * as Styled from './styles';
+import * as Styled from './SocialIcon.styled';
 
 export const SocialIcon = ({
 	className,

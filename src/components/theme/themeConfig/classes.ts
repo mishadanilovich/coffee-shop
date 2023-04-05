@@ -8,5 +8,10 @@ export const classes = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center'
+	},
+	contentBetween: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-between'
 	}
 };
