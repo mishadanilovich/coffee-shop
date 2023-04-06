@@ -1,37 +1,40 @@
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
-import { NavItem } from './navigation.interface';
-
 export const Navigation = styled.nav`
 	${({ theme }) => theme.classes.contentCenter};
 
 	column-gap: 20px;
 `;
 
-const hoverStyles = css`
-	color: ${({ theme }) => theme.palette.beige};
-	border-bottom: 1px solid ${({ theme }) => theme.palette.beige};
-	padding-bottom: ${({ theme }) => theme.spacing(1)};
-`;
-
 const navStyles = css`
-	${({ theme }) => theme.typography['16R']}
-	transition: all 0.2s linear;
-	line-height: 1;
+	${({ theme }) => theme.typography['16R']};
+	position: relative;
+	transition: color 0.2s linear;
 
+	&::after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		content: '';
+		height: 1px;
+		width: 0;
+		background: ${({ theme }) => theme.palette.beige};
+
+		transition: width 0.2s linear;
+	}
 	&:hover {
-		${hoverStyles};
+		color: ${({ theme }) => theme.palette.beige};
+
+		&::after {
+			width: 100%;
+		}
 	}
 `;
 
-export const NavLink = styled(Link)<Pick<NavItem, 'isActive'>>`
+export const NavLink = styled(Link)`
 	${navStyles};
-
-	${({ isActive }) => isActive && hoverStyles};
 `;
-export const NavSpan = styled.span<Pick<NavItem, 'isActive'>>`
+export const NavSpan = styled.span`
 	${navStyles};
-
-	${({ isActive }) => isActive && hoverStyles};
 `;
