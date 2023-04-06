@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google';
 import { theme } from './theme';
 
 const roboto = Roboto({
-	weight: ['300', '400', '700'],
+	weight: ['100', '300', '400', '700'],
 	style: ['normal', 'italic'],
 	subsets: ['latin']
 });
@@ -29,5 +29,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font-family: ${roboto.style.fontFamily};
+  outline: none;
+  border: none;
 }
 `;
