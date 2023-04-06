@@ -1,1 +1,7 @@
-export const Home = () => <div>Home page</div>;
+import { IntroSection } from './sections';
+
+export const Home = () => (
+	<>
+		<IntroSection />
+	</>
+);

@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { MetaProps } from './meta.interface';
+import { MetaProps } from './Meta.interface';
 import Head from 'next/head';
 import { getMetaTitle } from '@/components/utils';
 

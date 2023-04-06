@@ -1,4 +1,4 @@
-import { NavigationProps, NavItem } from './navigation.interface';
+import { NavigationProps, NavItem } from './Navigation.interface';
 
 import * as Styled from './Navigation.styled';
 
