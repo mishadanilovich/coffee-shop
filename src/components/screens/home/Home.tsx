@@ -1,7 +1,9 @@
-import { IntroSection } from './sections';
+import { Intro, Menu } from './sections';
+import { menu } from './mock';
 
 export const Home = () => (
 	<>
-		<IntroSection />
+		<Intro />
+		<Menu data={menu} />
 	</>
 );

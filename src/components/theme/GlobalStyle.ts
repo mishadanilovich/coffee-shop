@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { Roboto } from 'next/font/google';
-import { theme } from './theme';
 
 const roboto = Roboto({
-	weight: ['100', '300', '400', '700'],
+	weight: ['100', '300', '400', '500', '700'],
 	style: ['normal', 'italic'],
 	subsets: ['latin']
 });
@@ -22,8 +21,21 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   
-  color: ${theme.palette.white};
-  background: ${theme.palette.black};
+  color: ${({ theme }) => theme.palette.white};
+  background: ${({ theme }) => theme.palette.black};
+}
+
+html::-webkit-scrollbar{
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: ${({ theme }) => theme.palette.white};
+  border-radius: 20px;
 }
 
 a {
@@ -35,5 +47,13 @@ button {
   font-family: ${roboto.style.fontFamily};
   outline: none;
   border: none;
+}
+
+h2 {
+  ${({ theme }) => theme.typography['40B']};
+}
+
+h3 {
+  ${({ theme }) => theme.typography['25B']};
 }
 `;

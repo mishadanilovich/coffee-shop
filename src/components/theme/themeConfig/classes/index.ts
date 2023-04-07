@@ -1,9 +1,11 @@
-import { spacing } from './spacing';
+import { spacing } from '../spacing';
+import { section } from './styles';
 
 export const classes = {
 	container: {
 		padding: spacing(5, 35)
 	},
+	section,
 	contentCenter: {
 		display: 'flex',
 		alignItems: 'center',

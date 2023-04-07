@@ -19,12 +19,12 @@ export const typography = {
 		lineHeight: 1.6
 	},
 	'25R': {
-		fontSize: 20,
+		fontSize: 25,
 		fontWeight: 400,
 		lineHeight: 1.8
 	},
-	'35B': {
-		fontSize: 35,
+	'25B': {
+		fontSize: 25,
 		fontWeight: 700
 	},
 	'40B': {

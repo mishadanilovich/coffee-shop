@@ -2,9 +2,9 @@ import { Button } from '@/components/ui';
 import { COFFEE_SHOP_NAME } from '@/components/constants';
 
 import { INTRO_BUTTON_LABEL, INTRO_DESCRIPTION } from './constants';
-import * as Styled from './IntroSection.styled';
+import * as Styled from './Intro.styled';
 
-export const IntroSection = () => {
+export const Intro = () => {
 	return (
 		<Styled.Container>
 			<Styled.Content>

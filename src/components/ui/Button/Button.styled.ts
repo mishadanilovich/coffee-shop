@@ -10,7 +10,7 @@ export const Button = styled.button`
 	background: ${({ theme }) => theme.palette.beige};
 	cursor: pointer;
 
-	color: ${({ theme }) => theme.palette.white};
+	color: currentColor;
 	${({ theme }) => theme.typography['16R']};
 
 	border-radius: 4px;

@@ -6,8 +6,10 @@ import { theme } from './theme';
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
-			<GlobalStyle />
-			<StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+			<StyledThemeProvider theme={theme}>
+				<GlobalStyle />
+				{children}
+			</StyledThemeProvider>
 		</>
 	);
 };
