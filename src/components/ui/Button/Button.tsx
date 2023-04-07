@@ -15,7 +15,12 @@ export const Button = ({ disabled, isLoading, onClick, label, ...restProps }: Bu
 
 	return (
 		<Styled.Button disabled={disabled} onClick={handleClick} {...restProps}>
-			{isLoading ? <Loader /> : label}
+			{label}
+			{isLoading && (
+				<Styled.LoaderContainer>
+					<Loader />
+				</Styled.LoaderContainer>
+			)}
 		</Styled.Button>
 	);
 };
