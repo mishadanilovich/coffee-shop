@@ -2,47 +2,47 @@ import { Lesson, TitleTextUse } from '@/interfaces';
 
 export const menu = [
 	{
-		title: 'Эспрессо',
+		title: 'Espresso',
 		image: '/menu-1.png',
 		description: '',
 		price: 3
 	},
 	{
-		title: 'Доппио',
+		title: 'Doppio',
 		image: '/menu-2.png',
-		description: 'Двойной эспрессо, вода.',
+		description: 'Double espresso, water.',
 		price: 4.3
 	},
 	{
-		title: 'Флэт Уайт',
+		title: 'Flat white',
 		image: '/menu-3.png',
-		description: 'Эспрессо 2Х, молоко.',
+		description: 'Espresso 2X, milk.',
 		price: 5.5
 	},
 	{
-		title: 'Латте',
+		title: 'Latte',
 		image: '/menu-4.png',
 		price: 4.6
 	},
 	{
-		title: 'Раф классический',
+		title: 'Raf classic',
 		image: '/menu-5.png',
-		description: 'Эспрессо, сливки, молоко, сироп ванильный, орехово-шоколадная паста.',
+		description: 'Espresso, cream, milk, vanilla syrup, nut and chocolate paste.',
 		price: 5
 	},
 	{
-		title: 'Раф шоколадно-ореховый',
+		title: 'Raf chocolate-nut',
 		image: '/menu-6.png',
-		description: 'Эспрессо, сливки, молоко, сироп ванильный, орехово-шоколадная паста.',
+		description: 'Espresso, cream, milk, vanilla syrup, nut and chocolate paste.',
 		price: 6
 	},
 	{
-		title: 'Манго-кокос',
+		title: 'Mango-Coconut',
 		image: '/menu-1.png',
 		price: 7.8
 	},
 	{
-		title: 'Имбирь-мята',
+		title: 'Ginger-Mint',
 		image: '/menu-2.png',
 		price: 7.8
 	}
