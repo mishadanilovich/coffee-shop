@@ -1,9 +1,9 @@
 import { spacing } from '../spacing';
-import { section } from './styles';
+import { card, section, styledLink } from './styles';
 
 export const classes = {
 	container: {
-		padding: spacing(5, 35)
+		padding: spacing(10, 35, 5)
 	},
 	section,
 	contentCenter: {
@@ -15,5 +15,7 @@ export const classes = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between'
-	}
+	},
+	card,
+	styledLink
 };

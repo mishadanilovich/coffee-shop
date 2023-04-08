@@ -3,3 +3,4 @@ export const CURRENCY = 'Br';
 
 export * from './socialMedia';
 export * from './navItems';
+export * from './routes';

@@ -1,22 +1,35 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ButtonProps, ButtonUse } from './Button.interface';
 
-export const Button = styled.button`
+const primaryStyles = css`
+	background: ${({ theme }) => theme.palette.beige};
+`;
+
+const secondaryStyles = css`
+	background: transparent;
+	border: 1px solid ${({ theme }) => theme.palette.border};
+
+	&:hover {
+		color: ${({ theme }) => theme.palette.black};
+		background: ${({ theme }) => theme.palette.beige};
+	}
+`;
+
+export const Button = styled.button<Pick<ButtonProps, 'use'>>`
+	${({ theme }) => theme.typography['16R']};
+	${({ use }) => (use === ButtonUse.primary ? primaryStyles : secondaryStyles)};
+
 	position: relative;
 	display: flex;
 	align-items: center;
 	min-height: 30px;
 	width: fit-content;
 	padding: ${({ theme }) => theme.spacing(2, 8)};
-	background: ${({ theme }) => theme.palette.beige};
 	cursor: pointer;
 
-	color: currentColor;
-	${({ theme }) => theme.typography['16R']};
-
-	border-radius: 4px;
-	transition: border-radius 0.2s ease-in-out, transform 0.4s ease-in-out;
+	border-radius: 5px;
+	transition: all 0.2s linear;
 	&:hover {
-		border-radius: 10px;
 		transform: translate(2px, -1px);
 	}
 `;

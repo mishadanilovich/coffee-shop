@@ -1,6 +1,4 @@
-export enum TitleTextType {
-	main = 'main'
-}
+import { TitleContent } from '@/interfaces';
 
 export enum TitleType {
 	h1 = 'h1',
@@ -8,15 +6,8 @@ export enum TitleType {
 	h3 = 'h3'
 }
 
-interface Content {
-	text: string;
-	type?: TitleTextType;
-}
-
-export type TitleContent = Content[];
-
 export interface TitleProps {
 	content: TitleContent;
-	type: TitleType;
+	type?: TitleType;
 	className?: string;
 }

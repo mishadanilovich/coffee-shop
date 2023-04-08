@@ -5,9 +5,7 @@ export const TITLE_CONTENT: TitleContent = [
 		text: 'Our '
 	},
 	{
-		text: 'Menu',
+		text: 'Lessons',
 		use: TitleTextUse.main
 	}
 ];
-
-export const SEE_MORE = 'See more';

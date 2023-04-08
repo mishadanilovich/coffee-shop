@@ -1,11 +1,9 @@
+import { ROUTE } from './routes';
+
 export const NAV_ITEMS = [
 	{
 		label: 'Home',
-		href: '/'
-	},
-	{
-		label: 'Menu',
-		href: '/menu'
+		href: ROUTE.HOME
 	},
 	{
 		label: 'Lessons',
@@ -14,6 +12,10 @@ export const NAV_ITEMS = [
 	{
 		label: 'About Us',
 		href: '/about'
+	},
+	{
+		label: 'Menu',
+		href: ROUTE.MENU
 	},
 	{
 		label: 'Baristas',

@@ -2,16 +2,11 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 export const Card = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	${({ theme }) => theme.classes.card};
 	min-height: 350px;
 	padding: ${({ theme }) => theme.spacing(8)};
 
-	border: 1px solid ${({ theme }) => theme.palette.border};
-	border-radius: 10px;
-
-	transition: all 0.2s linear;
+	transition: all 0.3s linear;
 	&:hover {
 		color: ${({ theme }) => theme.palette.black};
 		background: ${({ theme }) => theme.palette.lightBeige};

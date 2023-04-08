@@ -1,9 +1,10 @@
-import { Intro, Menu } from './sections';
-import { menu } from './mock';
+import { Intro, Lessons, Menu } from './sections';
+import { lessons, menu } from './mock';
 
 export const Home = () => (
 	<>
 		<Intro />
-		<Menu data={menu} />
+		<Menu menu={menu} />
+		<Lessons lessons={lessons} />
 	</>
 );

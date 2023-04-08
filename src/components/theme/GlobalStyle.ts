@@ -45,6 +45,7 @@ a {
 
 button {
   font-family: ${roboto.style.fontFamily};
+  color: currentColor;
   outline: none;
   border: none;
 }

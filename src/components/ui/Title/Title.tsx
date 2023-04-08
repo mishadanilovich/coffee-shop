@@ -1,14 +1,15 @@
 import { createElement } from 'react';
-import { TitleProps, TitleTextType } from './Title.interface';
+import { TitleTextUse } from '@/interfaces';
 
+import { TitleProps, TitleType } from './Title.interface';
 import * as Styled from './Title.styled';
 
-export const Title = ({ content, type, className }: TitleProps) => {
+export const Title = ({ content, type = TitleType.h1, className }: TitleProps) => {
 	const getContent = () => {
 		return (
 			<>
-				{content.map(({ text, type }) =>
-					type === TitleTextType.main ? (
+				{content.map(({ text, use }) =>
+					use === TitleTextUse.main ? (
 						<Styled.MainPart key={text}>{text.toUpperCase()}</Styled.MainPart>
 					) : (
 						text.toUpperCase()
