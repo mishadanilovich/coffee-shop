@@ -17,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-lite-youtube-embed": "^2.3.52",
     "styled-components": "^5.3.9",
+    "swiper": "^9.2.0",
     "typescript": "*"
   },
   "devDependencies": {
