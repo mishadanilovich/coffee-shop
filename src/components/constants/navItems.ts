@@ -6,10 +6,6 @@ export const NAV_ITEMS = [
 		href: ROUTE.HOME
 	},
 	{
-		label: 'Lessons',
-		href: '/lessons'
-	},
-	{
 		label: 'About Us',
 		href: '/about'
 	},
@@ -20,6 +16,10 @@ export const NAV_ITEMS = [
 	{
 		label: 'Baristas',
 		href: '/baristas'
+	},
+	{
+		label: 'Lessons',
+		href: '/lessons'
 	},
 	{
 		label: 'Contacts',

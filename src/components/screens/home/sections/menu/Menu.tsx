@@ -1,7 +1,7 @@
 import { MenuCard, Title, TitleType } from '@/components/ui';
 import { ROUTE } from '@/components/constants';
 
-import { SEE_MORE, TITLE_CONTENT } from './constants';
+import { SEE_MORE, MENU_TITLE } from './constants';
 import { MenuProps } from './Menu.interface';
 import * as Styled from './Menu.styled';
 
@@ -12,7 +12,7 @@ export const Menu = ({ menu }: MenuProps) => {
 
 	return (
 		<Styled.Container>
-			<Title type={TitleType.h2} content={TITLE_CONTENT} />
+			<Title type={TitleType.h2} content={MENU_TITLE} />
 			<Styled.Content>{getContent()}</Styled.Content>
 			<Styled.StyledLink href={ROUTE.MENU}>{SEE_MORE}</Styled.StyledLink>
 		</Styled.Container>

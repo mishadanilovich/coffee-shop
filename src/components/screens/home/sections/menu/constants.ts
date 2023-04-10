@@ -1,6 +1,6 @@
 import { TitleContent, TitleTextUse } from '@/interfaces';
 
-export const TITLE_CONTENT: TitleContent = [
+export const MENU_TITLE: TitleContent = [
 	{
 		text: 'Our '
 	},

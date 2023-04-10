@@ -87,8 +87,8 @@ export const Lesson = styled.div`
 `;
 
 export const Description = styled.p`
-	${({ theme }) => theme.typography['20R']};
+	${({ theme }) => theme.typography['20L']};
 	color: ${({ theme }) => theme.palette.lightGray};
-	margin-top: ${({ theme }) => theme.spacing(7)};
-	margin-bottom: ${({ theme }) => theme.spacing(5)};
+	margin-top: ${({ theme }) => theme.spacing(3)};
+	margin-bottom: ${({ theme }) => theme.spacing(6)};
 `;

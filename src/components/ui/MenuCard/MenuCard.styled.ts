@@ -10,21 +10,29 @@ export const Card = styled.div`
 	&:hover {
 		color: ${({ theme }) => theme.palette.black};
 		background: ${({ theme }) => theme.palette.lightBeige};
+
+		& > p {
+			color: ${({ theme }) => theme.palette.black};
+		}
 	}
 `;
 
 export const MenuImage = styled(Image)`
 	border-radius: 50%;
+	border: ${({ theme }) => theme.borders.image};
 `;
 
 export const Title = styled.h3`
+	text-transform: uppercase;
 	margin-top: ${({ theme }) => theme.spacing(3)};
 	margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const Description = styled.p`
-	${({ theme }) => theme.typography['16R']};
+	${({ theme }) => theme.typography['16L']};
+	color: ${({ theme }) => theme.palette.lightGray};
 	margin-bottom: ${({ theme }) => theme.spacing(6)};
+	transition: color 0.3s linear;
 `;
 
 export const BottomContainer = styled.div`

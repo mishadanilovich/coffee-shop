@@ -1,21 +1,22 @@
 export const typography = {
 	'16L': {
 		fontSize: 16,
-		fontWeight: 100
+		fontWeight: 300,
+		lineHeight: 1.4
 	},
 	'20L': {
 		fontSize: 20,
-		fontWeight: 100,
+		fontWeight: 300,
 		lineHeight: 1.4
 	},
 	'16R': {
 		fontSize: 16,
 		fontWeight: 400,
-		lineHeight: 1.4
+		lineHeight: 1.6
 	},
 	'20R': {
 		fontSize: 20,
-		fontWeight: 300,
+		fontWeight: 400,
 		lineHeight: 1.6
 	},
 	'25R': {
