@@ -3,3 +3,4 @@ export * from './Instagram';
 export * from './Facebook';
 export * from './Loader';
 export * from './QuotationMark';
+export * from './Cup';

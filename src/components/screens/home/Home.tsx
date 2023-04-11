@@ -1,4 +1,4 @@
-import { AboutUs, Baristas, Intro, Lessons, Menu } from './sections';
+import { AboutUs, Baristas, ContactUs, Intro, Lessons, Menu } from './sections';
 import { baristas, lessons, menu } from './mock';
 
 export const Home = () => (
@@ -8,5 +8,6 @@ export const Home = () => (
 		<Menu menu={menu} />
 		<Baristas baristas={baristas} />
 		<Lessons lessons={lessons} />
+		<ContactUs />
 	</>
 );
