@@ -1,4 +1,4 @@
-import { Lesson, TitleTextUse } from '@/interfaces';
+import { Barista, Lesson, TitleTextUse } from '@/interfaces';
 
 export const menu = [
 	{
@@ -93,5 +93,35 @@ export const lessons: Lesson[] = [
 		description:
 			'In the preparation of classic rafa, coffee beans of several arabica varieties are used. Sometimes about 20% of robusta is added. The degree of roasting of the grains should be average. At the request of the customer, the grains can be fried harder. Fine or medium grain grinding is used to make espresso. The temperature of the finished drink is about 55 degrees. Coffee is prepared no more than a quarter of an hour. Some baristas manage to cook it in just 5 minutes. The standard serving volume is 120-180 ml. The caffeine content in one serving of rafa is 50-68 mg. Therefore, it is not recommended to drink more than 1-2 cups of this drink per day.',
 		lessonUrl: 'https://youtu.be/bZVXD0pxHmI'
+	}
+];
+
+export const baristas: Barista[] = [
+	{
+		id: '1',
+		name: {
+			given: 'Alexey',
+			family: 'Pavlovich'
+		},
+		quote: 'A barista is a specialist in making coffee (mainly espresso), who knows how to properly prepare coffee (including using latte art) or drinks based on it and serve them to the visitor. In other words, this is a person who performs the functions of a bartender, but does not work with alcohol and cocktails, but with coffee or coffee-based drinks.',
+		avatar: '/avatar-lesha.jpg'
+	},
+	{
+		id: '2',
+		name: {
+			given: 'Alexey',
+			family: 'Pavlovich'
+		},
+		quote: 'A barista is a specialist in making coffee (mainly espresso), who knows how to properly prepare coffee (including using latte art) or drinks based on it and serve them to the visitor. In other words, this is a person who performs the functions of a bartender, but does not work with alcohol and cocktails, but with coffee or coffee-based drinks.',
+		avatar: '/avatar-lesha.jpg'
+	},
+	{
+		id: '3',
+		name: {
+			given: 'Alexey',
+			family: 'Pavlovich'
+		},
+		quote: 'A barista is a specialist in making coffee (mainly espresso), who knows how to properly prepare coffee (including using latte art) or drinks based on it and serve them to the visitor. In other words, this is a person who performs the functions of a bartender, but does not work with alcohol and cocktails, but with coffee or coffee-based drinks.',
+		avatar: '/avatar-lesha.jpg'
 	}
 ];

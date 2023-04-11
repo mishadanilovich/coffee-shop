@@ -8,13 +8,16 @@ export const Title = ({ content, type = TitleType.h1, className }: TitleProps) =
 	const getContent = () => {
 		return (
 			<>
-				{content.map(({ text, use }) =>
-					use === TitleTextUse.main ? (
-						<Styled.MainPart key={text}>{text.toUpperCase()}</Styled.MainPart>
+				{content.map(({ text, use }, index, arr) => {
+					const resText =
+						index !== arr.length - 1 ? `${text.toUpperCase()} ` : text.toUpperCase();
+
+					return use === TitleTextUse.main ? (
+						<Styled.MainPart key={text}>{resText}</Styled.MainPart>
 					) : (
-						text.toUpperCase()
-					)
-				)}
+						resText
+					);
+				})}
 			</>
 		);
 	};

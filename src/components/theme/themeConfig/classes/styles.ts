@@ -19,7 +19,7 @@ export const styledLink: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
 	background: transparent;
 	padding: ${({ theme }) => theme.spacing(2, 8)};
 
-	border: 1px solid ${({ theme }) => theme.palette.border};
+	border: ${({ theme }) => theme.borders.default};
 	border-radius: 5px;
 
 	transition: all 0.3s linear;
@@ -34,6 +34,6 @@ export const card: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: 1px solid ${({ theme }) => theme.palette.border};
+	border: ${({ theme }) => theme.borders.default};
 	border-radius: 10px;
 `;

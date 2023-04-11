@@ -50,6 +50,10 @@ button {
   border: none;
 }
 
+h1 {
+  ${({ theme }) => theme.typography['60B']};
+}
+
 h2 {
   ${({ theme }) => theme.typography['40B']};
 }

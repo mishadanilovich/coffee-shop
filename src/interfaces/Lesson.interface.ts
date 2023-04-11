@@ -1,4 +1,4 @@
-import { TitleContent } from './Title';
+import { TitleContent } from './Title.interface';
 
 export interface Lesson {
 	id: string;

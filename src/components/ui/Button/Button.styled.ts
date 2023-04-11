@@ -7,7 +7,7 @@ const primaryStyles = css`
 
 const secondaryStyles = css`
 	background: transparent;
-	border: 1px solid ${({ theme }) => theme.palette.border};
+	border: ${({ theme }) => theme.borders.default};
 
 	&:hover {
 		color: ${({ theme }) => theme.palette.black};

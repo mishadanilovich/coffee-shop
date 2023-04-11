@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { default as StyledImage } from 'next/image';
 
-export const AboutUs = styled.section`
+export const Container = styled.section`
 	${({ theme }) => theme.classes.container};
 	${({ theme }) => theme.classes.section};
 `;

@@ -9,7 +9,7 @@ import {
 import * as Styled from './AboutUs.styled';
 
 export const AboutUs = () => (
-	<Styled.AboutUs>
+	<Styled.Container>
 		<Title type={TitleType.h2} content={ABOUT_US_TITLE} />
 		<Styled.ContentContainer>
 			<Styled.ImageContainer>
@@ -21,5 +21,5 @@ export const AboutUs = () => (
 				<Button label={BUTTON_LABEL} />
 			</Styled.Content>
 		</Styled.ContentContainer>
-	</Styled.AboutUs>
+	</Styled.Container>
 );

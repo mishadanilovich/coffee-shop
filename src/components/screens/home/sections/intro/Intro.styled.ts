@@ -18,7 +18,6 @@ export const Content = styled.section`
 `;
 
 export const Title = styled.h1`
-	${({ theme }) => theme.typography['60B']};
 	margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
