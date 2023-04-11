@@ -10,6 +10,7 @@ export const Header = styled.header`
 
 	${({ theme }) => theme.classes.container};
 	${({ theme }) => theme.classes.contentBetween};
+	padding-top: ${({ theme }) => theme.spacing(5)};
 
 	background: ${({ theme }) => theme.palette.black};
 	border-bottom: 1px solid ${({ theme }) => theme.palette.white};
