@@ -1,4 +1,9 @@
 export const typography = {
+	'13L': {
+		fontSize: 13,
+		fontWeight: 300,
+		lineHeight: 1.4
+	},
 	'16L': {
 		fontSize: 16,
 		fontWeight: 300,

@@ -50,6 +50,16 @@ button {
   border: none;
 }
 
+input,
+input:active {
+  font-family: ${roboto.style.fontFamily};
+  text-transform: none;
+  background: none;
+  color: currentColor;
+  border: none;
+  outline: none;
+}
+
 h1 {
   ${({ theme }) => theme.typography['60B']};
 }

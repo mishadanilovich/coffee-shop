@@ -25,4 +25,6 @@ export const mapStyles = {
 export const RightContent = styled.div`
 	flex: 1 1 450px;
 	padding: ${({ theme }) => theme.spacing(12.5, 5)};
+	background: ${({ theme }) => theme.palette.lightBlack};
+	border-radius: 10px;
 `;

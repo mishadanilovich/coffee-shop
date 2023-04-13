@@ -8,3 +8,5 @@ export * from './Slider';
 export * from './BaristaCard';
 export * from './Map';
 export * from './Error';
+export * from './Input';
+export * from './Form';
