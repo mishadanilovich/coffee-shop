@@ -4,3 +4,7 @@ export * from './Facebook';
 export * from './Loader';
 export * from './QuotationMark';
 export * from './Cup';
+export * from './User';
+export * from './Phone';
+export * from './Home';
+export * from './Email';

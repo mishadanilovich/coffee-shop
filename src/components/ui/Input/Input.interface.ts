@@ -1,6 +1,6 @@
-import { InputHTMLAttributes, ReactElement } from 'react';
+import { FunctionComponent, InputHTMLAttributes, SVGProps } from 'react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	leftComponent?: ReactElement;
+	leftIcon?: FunctionComponent<SVGProps<SVGSVGElement>>;
 	error?: string;
 }

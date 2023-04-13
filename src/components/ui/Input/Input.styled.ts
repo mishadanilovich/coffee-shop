@@ -15,12 +15,19 @@ export const InputBox = styled.div<{ error?: string }>`
 		css`
 			border: 1px solid ${({ theme }) => theme.palette.red};
 		`}
+
+	& > svg {
+		width: 20px;
+		height: 20px;
+		color: ${({ theme }) => theme.palette.lightGray};
+		margin-left: ${({ theme }) => theme.spacing(3)};
+	}
 `;
-export const Input = styled.input`
+export const Input = styled.input<{ isLeftIcon?: boolean }>`
 	${({ theme }) => theme.typography['16R']};
 	line-height: initial;
 	width: 100%;
-	padding: ${({ theme }) => theme.spacing(5)};
+	padding: ${({ theme, isLeftIcon }) => theme.spacing(4.5, 5, 4.5, isLeftIcon ? 3 : 5)};
 `;
 
 export const Error = styled.p`
