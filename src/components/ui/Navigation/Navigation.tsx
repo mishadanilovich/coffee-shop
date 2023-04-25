@@ -12,9 +12,9 @@ const NavItem = ({ href, label, ...rest }: NavItem) => {
 	);
 };
 
-export const Navigation = ({ navItems }: NavigationProps) => {
+export const Navigation = ({ navItems, className }: NavigationProps) => {
 	return (
-		<Styled.Navigation>
+		<Styled.Navigation className={className}>
 			{navItems.map(item => {
 				return <NavItem key={item.label} {...item} />;
 			})}

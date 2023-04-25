@@ -4,6 +4,18 @@ import { StyledCSS } from '../../types.interface';
 // Fix types
 export const container: StyledCSS = css`
 	padding: ${({ theme }) => theme.spacing(8, 35, 5)};
+
+	@media ${({ theme }) => theme.device.laptop} {
+		padding: ${({ theme }) => theme.spacing(8, 25, 5)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		padding: ${({ theme }) => theme.spacing(8, 10, 5)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		padding: ${({ theme }) => theme.spacing(6, 6, 5)};
+	}
 `;
 
 export const section: StyledCSS = css`

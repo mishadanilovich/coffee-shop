@@ -20,6 +20,10 @@ export const ImageContainer = styled.div`
 	img {
 		transition: 0.2s linear;
 	}
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		height: 180px;
+	}
 `;
 
 export const Content = styled.div`

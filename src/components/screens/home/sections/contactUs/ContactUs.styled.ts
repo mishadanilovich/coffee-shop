@@ -27,4 +27,8 @@ export const RightContent = styled.div`
 	padding: ${({ theme }) => theme.spacing(12.5, 5)};
 	background: ${({ theme }) => theme.palette.lightBlack};
 	border-radius: 10px;
+
+	@media ${({ theme }) => theme.device.laptop} {
+		padding: ${({ theme }) => theme.spacing(8, 5)};
+	}
 `;

@@ -7,4 +7,5 @@ export interface NavItem {
 
 export interface NavigationProps {
 	navItems: NavItem[];
+	className?: string;
 }

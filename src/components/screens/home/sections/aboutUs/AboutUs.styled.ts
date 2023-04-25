@@ -20,6 +20,7 @@ export const ImageContainer = styled.div`
 export const Image = styled(StyledImage)`
 	width: 100%;
 	height: auto;
+	border-radius: 10px;
 `;
 
 export const Content = styled.div`
