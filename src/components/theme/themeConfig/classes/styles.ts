@@ -1,7 +1,12 @@
-import { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { css } from 'styled-components';
+import { StyledCSS } from '../../types.interface';
 
 // Fix types
-export const section: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
+export const container: StyledCSS = css`
+	padding: ${({ theme }) => theme.spacing(8, 35, 5)};
+`;
+
+export const section: StyledCSS = css`
 	display: flex;
 	flex-direction: column;
 
@@ -9,11 +14,11 @@ export const section: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
 
 	h1:first-of-type,
 	h2:first-of-type {
-		margin-bottom: ${({ theme }) => theme.spacing(9)};
+		margin-bottom: ${({ theme }) => theme.spacing(7)};
 	}
 `;
 
-export const styledLink: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
+export const styledLink: StyledCSS = css`
 	min-height: 30px;
 	width: fit-content;
 	background: transparent;
@@ -30,7 +35,7 @@ export const styledLink: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
 	}
 `;
 
-export const card: FlattenInterpolation<ThemeProps<DefaultTheme>> = css`
+export const card: StyledCSS = css`
 	display: flex;
 	flex-direction: column;
 	align-items: center;

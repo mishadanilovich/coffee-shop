@@ -1,10 +1,7 @@
-import { spacing } from '../spacing';
-import { card, section, styledLink } from './styles';
+import { card, container, section, styledLink } from './styles';
 
 export const classes = {
-	container: {
-		padding: spacing(10, 35, 5)
-	},
+	container,
 	section,
 	contentCenter: {
 		display: 'flex',

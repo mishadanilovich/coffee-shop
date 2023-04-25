@@ -1,4 +1,13 @@
-import { zIndex, palette, typography, spacing, classes, borders } from './themeConfig';
+import {
+	zIndex,
+	palette,
+	typography,
+	spacing,
+	classes,
+	borders,
+	device,
+	size
+} from './themeConfig';
 
 export const theme = {
 	palette,
@@ -6,7 +15,9 @@ export const theme = {
 	spacing,
 	zIndex,
 	classes,
-	borders
+	borders,
+	device,
+	size
 };
 
 export type Theme = typeof theme;

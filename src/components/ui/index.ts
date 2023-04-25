@@ -10,3 +10,4 @@ export * from './Map';
 export * from './Error';
 export * from './Input';
 export * from './Form';
+export * from './BlogCard';

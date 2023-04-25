@@ -1,5 +1,5 @@
 import { SwiperSlide } from 'swiper/react';
-import { BaristaCard, Slider, Title, TitleType } from '@/components/ui';
+import { BaristaCard, CubeSlider, Title, TitleType } from '@/components/ui';
 
 import { BARISTAS_TITLE } from './constants';
 import { BaristasProps } from './Baristas.interface';
@@ -18,7 +18,7 @@ export const Baristas = ({ baristas }: BaristasProps) => {
 		<Styled.Container>
 			<Title type={TitleType.h2} content={BARISTAS_TITLE} />
 			<Styled.Content>
-				<Slider>{getSliders()}</Slider>
+				<CubeSlider>{getSliders()}</CubeSlider>
 			</Styled.Content>
 		</Styled.Container>
 	);

@@ -1,27 +1,15 @@
 import { FC, PropsWithChildren } from 'react';
-import { Pagination, EffectCube, A11y } from 'swiper';
+import { Pagination, A11y } from 'swiper';
+import { SwiperProps } from 'swiper/react/swiper-react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-cube';
 
 import * as Styled from './Slider.styled';
 
-export const Slider: FC<PropsWithChildren> = ({ children }) => {
+export const Slider: FC<PropsWithChildren & SwiperProps> = ({ children, ...swiperProps }) => {
 	return (
-		<Styled.Slider
-			slidesPerView={1}
-			modules={[Pagination, EffectCube, A11y]}
-			pagination
-			effect={'cube'}
-			cubeEffect={{
-				shadow: true,
-				slideShadows: true,
-				shadowOffset: 20,
-				shadowScale: 0.94
-			}}
-			loop
-		>
+		<Styled.Slider modules={[Pagination, A11y]} pagination {...swiperProps}>
 			{children}
 		</Styled.Slider>
 	);

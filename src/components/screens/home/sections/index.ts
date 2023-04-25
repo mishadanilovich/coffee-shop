@@ -4,3 +4,4 @@ export * from './lessons';
 export * from './aboutUs';
 export * from './baristas';
 export * from './contactUs';
+export * from './blogs';

@@ -1,4 +1,4 @@
-import { Barista, Lesson, TitleTextUse } from '@/interfaces';
+import { Barista, Blog, Lesson, TitleTextUse } from '@/interfaces';
 
 export const menu = [
 	{
@@ -123,5 +123,36 @@ export const baristas: Barista[] = [
 		},
 		quote: 'A barista is a specialist in making coffee (mainly espresso), who knows how to properly prepare coffee (including using latte art) or drinks based on it and serve them to the visitor. In other words, this is a person who performs the functions of a bartender, but does not work with alcohol and cocktails, but with coffee or coffee-based drinks.',
 		avatar: '/avatar-lesha.jpg'
+	}
+];
+
+export const blogs: Blog[] = [
+	{
+		id: '1',
+		title: 'Delicious and refreshing coffee',
+		description: 'Made on April 25, 2023',
+		img: '/blog-1.jpeg',
+		blogUrl: ''
+	},
+	{
+		id: '2',
+		title: 'Delicious and refreshing coffee',
+		description: 'Made on April 25, 2023',
+		img: '/blog-2.jpeg',
+		blogUrl: ''
+	},
+	{
+		id: '3',
+		title: 'Delicious and refreshing coffee',
+		description: 'Made on April 25, 2023',
+		img: '/blog-3.jpeg',
+		blogUrl: ''
+	},
+	{
+		id: '4',
+		title: 'Delicious and refreshing coffee',
+		description: 'Made on April 25, 2023',
+		img: '/blog-1.jpeg',
+		blogUrl: ''
 	}
 ];
