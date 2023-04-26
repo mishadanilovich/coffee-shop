@@ -10,11 +10,11 @@ export const container: StyledCSS = css`
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
-		padding: ${({ theme }) => theme.spacing(8, 15, 5)};
+		padding: ${({ theme }) => theme.spacing(8, 12, 5)};
 	}
 
 	@media ${({ theme }) => theme.device.mobileL} {
-		padding: ${({ theme }) => theme.spacing(8, 10, 5)};
+		padding: ${({ theme }) => theme.spacing(8, 9, 5)};
 	}
 
 	@media ${({ theme }) => theme.device.mobileM} {
@@ -35,6 +35,10 @@ export const section: StyledCSS = css`
 	h1:first-of-type,
 	h2:first-of-type {
 		margin-bottom: ${({ theme }) => theme.spacing(7)};
+
+		@media ${({ theme }) => theme.device.tablet} {
+			margin-bottom: ${({ theme }) => theme.spacing(5)};
+		}
 	}
 `;
 

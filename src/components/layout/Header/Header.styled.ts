@@ -9,31 +9,18 @@ export const Header = styled.header`
 	height: 100px;
 	z-index: ${({ theme }) => theme.zIndex.header};
 
+	${({ theme }) => theme.classes.container};
 	${({ theme }) => theme.classes.contentBetween};
-	padding: ${({ theme }) => theme.spacing(5, 35)};
+	padding-top: ${({ theme }) => theme.spacing(5)};
+	padding-bottom: ${({ theme }) => theme.spacing(5)};
 
 	background: ${({ theme }) => theme.palette.black};
 	border-bottom: 1px solid ${({ theme }) => theme.palette.white};
 
 	@media ${({ theme }) => theme.device.laptop} {
-		padding: ${({ theme }) => theme.spacing(4, 25)};
+		padding-top: ${({ theme }) => theme.spacing(4)};
+		padding-bottom: ${({ theme }) => theme.spacing(4)};
 		height: 85px;
-	}
-
-	@media ${({ theme }) => theme.device.tablet} {
-		padding: ${({ theme }) => theme.spacing(4, 15)};
-	}
-
-	@media ${({ theme }) => theme.device.mobileL} {
-		padding: ${({ theme }) => theme.spacing(4, 10)};
-	}
-
-	@media ${({ theme }) => theme.device.mobileM} {
-		padding: ${({ theme }) => theme.spacing(4, 6)};
-	}
-
-	@media ${({ theme }) => theme.device.mobileS} {
-		padding: ${({ theme }) => theme.spacing(4, 5)};
 	}
 `;
 

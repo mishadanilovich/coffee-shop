@@ -32,6 +32,10 @@ export const Quote = styled.p`
 
 	max-width: 90%;
 	margin: ${({ theme }) => theme.spacing(5, 0)};
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		line-height: 1.4;
+	}
 `;
 
 export const Avatar = styled(Image)`

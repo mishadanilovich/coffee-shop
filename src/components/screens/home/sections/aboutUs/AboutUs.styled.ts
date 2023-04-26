@@ -35,11 +35,18 @@ export const Content = styled.div`
 	@media ${({ theme }) => theme.device.laptop} {
 		padding: ${({ theme }) => theme.spacing(5, 0, 0)};
 	}
+
+	@media ${({ theme }) => theme.device.tablet} {
+		padding: ${({ theme }) => theme.spacing(3, 0, 0)};
+	}
 `;
 
 export const ContentTitle = styled.h3`
-	font-size: 30px;
 	margin-bottom: ${({ theme }) => theme.spacing(3)};
+
+	@media ${({ theme }) => theme.device.tablet} {
+		margin-bottom: ${({ theme }) => theme.spacing(2)};
+	}
 `;
 
 export const ContentText = styled.p`
@@ -47,7 +54,7 @@ export const ContentText = styled.p`
 	color: ${({ theme }) => theme.palette.lightGray};
 	margin-bottom: ${({ theme }) => theme.spacing(6)};
 
-	@media ${({ theme }) => theme.device.mobileL} {
-		margin-bottom: ${({ theme }) => theme.spacing(4)};
+	@media ${({ theme }) => theme.device.tablet} {
+		margin-bottom: ${({ theme }) => theme.spacing(3)};
 	}
 `;

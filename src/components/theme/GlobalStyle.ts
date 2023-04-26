@@ -61,13 +61,25 @@ input:active {
 
 h1 {
   ${({ theme }) => theme.typography['60B']};
+
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 50px;
+  }
 }
 
 h2 {
   ${({ theme }) => theme.typography['40B']};
+
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 30px;
+  }
 }
 
 h3 {
   ${({ theme }) => theme.typography['25B']};
+
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 21px;
+  }
 }
 `;
