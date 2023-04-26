@@ -11,6 +11,10 @@ export const Content = styled.div`
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: ${({ theme }) => theme.spacing(4)};
 	margin-bottom: ${({ theme }) => theme.spacing(4)};
+
+	@media ${({ theme }) => theme.device.mobileS} {
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
 `;
 
 export const StyledLink = styled(Link)`

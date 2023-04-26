@@ -20,8 +20,16 @@ export const Header = styled.header`
 		height: auto;
 	}
 
-	@media ${({ theme }) => theme.device.laptop} {
+	@media ${({ theme }) => theme.device.tablet} {
+		padding: ${({ theme }) => theme.spacing(4, 15)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
 		padding: ${({ theme }) => theme.spacing(4, 10)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		padding: ${({ theme }) => theme.spacing(4, 6)};
 	}
 `;
 

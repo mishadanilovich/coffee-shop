@@ -9,6 +9,10 @@ export const container: StyledCSS = css`
 		padding: ${({ theme }) => theme.spacing(8, 25, 5)};
 	}
 
+	@media ${({ theme }) => theme.device.tablet} {
+		padding: ${({ theme }) => theme.spacing(8, 15, 5)};
+	}
+
 	@media ${({ theme }) => theme.device.mobileL} {
 		padding: ${({ theme }) => theme.spacing(8, 10, 5)};
 	}

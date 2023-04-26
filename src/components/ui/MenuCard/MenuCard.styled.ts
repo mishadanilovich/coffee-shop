@@ -15,11 +15,21 @@ export const Card = styled.div`
 			color: ${({ theme }) => theme.palette.black};
 		}
 	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		min-height: 320px;
+		padding: ${({ theme }) => theme.spacing(5)};
+	}
 `;
 
 export const MenuImage = styled(Image)`
 	border-radius: 50%;
 	border: ${({ theme }) => theme.borders.image};
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		height: 90px;
+		width: 90px;
+	}
 `;
 
 export const Title = styled.h3`

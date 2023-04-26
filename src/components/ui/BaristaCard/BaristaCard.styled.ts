@@ -11,6 +11,10 @@ export const Container = styled.div`
 	cursor: default;
 	border: ${({ theme }) => theme.borders.default};
 	border-radius: 10px;
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		padding: ${({ theme }) => theme.spacing(6, 0, 9)};
+	}
 `;
 
 export const Quote = styled.p`

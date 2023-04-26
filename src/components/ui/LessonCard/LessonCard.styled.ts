@@ -4,6 +4,10 @@ export const Lesson = styled.div`
 	${({ theme }) => theme.classes.card};
 	padding: ${({ theme }) => theme.spacing(5)};
 
+	@media ${({ theme }) => theme.device.mobileM} {
+		padding: ${({ theme }) => theme.spacing(3)};
+	}
+
 	// styles for react-lite-youtube-embed package
 	.yt-lite {
 		margin-top: auto;

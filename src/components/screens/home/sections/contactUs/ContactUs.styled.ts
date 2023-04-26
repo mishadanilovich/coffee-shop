@@ -14,6 +14,10 @@ export const Content = styled.div`
 export const LeftContent = styled.div`
 	flex: 1 1 450px;
 	min-height: 450px;
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		min-height: 350px;
+	}
 `;
 
 export const mapStyles = {
@@ -30,5 +34,9 @@ export const RightContent = styled.div`
 
 	@media ${({ theme }) => theme.device.laptop} {
 		padding: ${({ theme }) => theme.spacing(8, 5)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileM} {
+		padding: ${({ theme }) => theme.spacing(5)};
 	}
 `;
