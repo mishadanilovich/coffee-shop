@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Navigation as StyledNavigation } from '@/components/ui';
 
 export const Header = styled.header`
-	position: fixed;
+	position: sticky;
 	top: 0;
 	width: 100%;
 	height: 100px;
@@ -17,7 +17,7 @@ export const Header = styled.header`
 
 	@media ${({ theme }) => theme.device.laptop} {
 		padding: ${({ theme }) => theme.spacing(4, 25)};
-		height: auto;
+		height: 85px;
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
@@ -30,6 +30,10 @@ export const Header = styled.header`
 
 	@media ${({ theme }) => theme.device.mobileM} {
 		padding: ${({ theme }) => theme.spacing(4, 6)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileS} {
+		padding: ${({ theme }) => theme.spacing(4, 5)};
 	}
 `;
 

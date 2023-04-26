@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
+import { QuotationMark as StyledQuotationMark } from '@/components/icons';
+
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -12,8 +14,14 @@ export const Container = styled.div`
 	border: ${({ theme }) => theme.borders.default};
 	border-radius: 10px;
 
-	@media ${({ theme }) => theme.device.mobileM} {
+	@media ${({ theme }) => theme.device.mobileL} {
 		padding: ${({ theme }) => theme.spacing(6, 0, 9)};
+	}
+`;
+
+export const QuotationMark = styled(StyledQuotationMark)`
+	@media ${({ theme }) => theme.device.mobileL} {
+		height: 34px;
 	}
 `;
 

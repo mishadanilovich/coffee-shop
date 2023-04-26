@@ -24,6 +24,7 @@ export const Blogs = ({ blogs }: BlogsProps) => {
 					pagination={{
 						clickable: true
 					}}
+					spaceBetween={10}
 					breakpoints={{
 						[theme.size.laptop]: {
 							slidesPerView: 2,

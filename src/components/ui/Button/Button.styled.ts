@@ -32,6 +32,10 @@ export const Button = styled.button<Pick<ButtonProps, 'use'>>`
 	&:hover {
 		transform: translate(2px, -1px);
 	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		padding: ${({ theme }) => theme.spacing(1.5, 5)};
+	}
 `;
 
 export const LoaderContainer = styled.span`

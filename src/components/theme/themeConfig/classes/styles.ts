@@ -20,6 +20,10 @@ export const container: StyledCSS = css`
 	@media ${({ theme }) => theme.device.mobileM} {
 		padding: ${({ theme }) => theme.spacing(6, 6, 5)};
 	}
+
+	@media ${({ theme }) => theme.device.mobileS} {
+		padding: ${({ theme }) => theme.spacing(6, 5, 5)};
+	}
 `;
 
 export const section: StyledCSS = css`

@@ -19,7 +19,6 @@ body {
   font-family: ${roboto.style.fontFamily};
   max-width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
   
   color: ${({ theme }) => theme.palette.white};
   background: ${({ theme }) => theme.palette.black};
