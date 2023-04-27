@@ -7,7 +7,9 @@ export const Header = () => {
 		<Styled.Header>
 			<Styled.Logo src="/logo.png" alt="Logo" width={60} height={60} />
 			<Styled.Navigation navItems={NAV_ITEMS} />
-			<Styled.Actions>Search</Styled.Actions>
+			<Styled.Actions>
+				<Styled.Store width="27px" height="27px" />
+			</Styled.Actions>
 		</Styled.Header>
 	);
 };

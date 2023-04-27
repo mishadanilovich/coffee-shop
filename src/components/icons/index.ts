@@ -8,3 +8,4 @@ export * from './User';
 export * from './Phone';
 export * from './Home';
 export * from './Email';
+export * from './Store';

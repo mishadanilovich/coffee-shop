@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import { Store as StyledStore } from '@/components/icons';
 import { Navigation as StyledNavigation } from '@/components/ui';
 
 export const Header = styled.header`
@@ -44,4 +45,15 @@ export const Logo = styled(Image)`
 	}
 `;
 
-export const Actions = styled.div``;
+export const Actions = styled.div`
+	display: flex;
+`;
+
+export const Store = styled(StyledStore)`
+	cursor: pointer;
+	transition: color 0.2s ease-in-out;
+
+	&:hover {
+		color: ${({ theme }) => theme.palette.beige};
+	}
+`;
