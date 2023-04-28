@@ -1,4 +1,5 @@
 import { LessonCard, Title, TitleType } from '@/components/ui';
+import { ANCHORS } from '@/components/constants';
 
 import { LessonsProps } from './Lessons.interface';
 import { LESSONS_TITLE } from './constants';
@@ -10,7 +11,7 @@ export const Lessons = ({ lessons }: LessonsProps) => {
 	};
 
 	return (
-		<Styled.Container>
+		<Styled.Container id={ANCHORS.LESSONS}>
 			<Title type={TitleType.h2} content={LESSONS_TITLE} />
 			<Styled.Content>{getContent()}</Styled.Content>
 		</Styled.Container>

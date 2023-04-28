@@ -1,13 +1,14 @@
 import { ROUTE } from './routes';
+import { ANCHORS } from './anchors';
 
 export const NAV_ITEMS = [
 	{
 		label: 'Home',
-		href: ROUTE.HOME
+		href: `/#${ANCHORS.HOME}`
 	},
 	{
 		label: 'About Us',
-		href: '/about'
+		href: `/#${ANCHORS.ABOUT_US}`
 	},
 	{
 		label: 'Menu',
@@ -15,18 +16,18 @@ export const NAV_ITEMS = [
 	},
 	{
 		label: 'Baristas',
-		href: '/baristas'
+		href: `/#${ANCHORS.BARISTAS}`
 	},
 	{
 		label: 'Lessons',
-		href: '/lessons'
+		href: `/#${ANCHORS.LESSONS}`
 	},
 	{
 		label: 'Contacts',
-		href: '/contacts'
+		href: `/#${ANCHORS.CONTACTS}`
 	},
 	{
 		label: 'Blogs',
-		href: '/blogs'
+		href: `/#${ANCHORS.BLOGS}`
 	}
 ];

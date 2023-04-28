@@ -8,3 +8,4 @@ export const COFFEE_SHOP_COORDS = { lat: 53.67793240751909, lng: 23.826555466952
 export * from './socialMedia';
 export * from './navItems';
 export * from './routes';
+export * from './anchors';

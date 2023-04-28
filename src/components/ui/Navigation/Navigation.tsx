@@ -4,7 +4,7 @@ import * as Styled from './Navigation.styled';
 
 const NavItem = ({ href, label, ...rest }: NavItem) => {
 	return href ? (
-		<Styled.NavLink href={href} {...rest}>
+		<Styled.NavLink href={href} {...rest} scroll={false}>
 			{label}
 		</Styled.NavLink>
 	) : (

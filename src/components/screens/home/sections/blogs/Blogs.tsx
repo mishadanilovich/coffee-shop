@@ -1,6 +1,7 @@
 import { SwiperSlide } from 'swiper/react';
 import { BlogCard, Slider, Title, TitleType } from '@/components/ui';
 import { theme } from '@/components/theme';
+import { ANCHORS } from '@/components/constants';
 
 import { BLOGS_TITLE } from './constants';
 import { BlogsProps } from './Blogs.interface';
@@ -16,7 +17,7 @@ export const Blogs = ({ blogs }: BlogsProps) => {
 	};
 
 	return (
-		<Styled.Container>
+		<Styled.Container id={ANCHORS.BLOGS}>
 			<Title content={BLOGS_TITLE} type={TitleType.h2} />
 			<Styled.SliderContainer>
 				<Slider
@@ -26,7 +27,7 @@ export const Blogs = ({ blogs }: BlogsProps) => {
 					}}
 					spaceBetween={10}
 					breakpoints={{
-						[theme.size.laptop]: {
+						[theme.size.tablet]: {
 							slidesPerView: 2,
 							spaceBetween: 10
 						},

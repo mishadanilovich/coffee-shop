@@ -1,4 +1,5 @@
 import { Button, Title, TitleType } from '@/components/ui';
+import { ANCHORS } from '@/components/constants';
 
 import {
 	ABOUT_US_CONTENT_TEXT,
@@ -9,7 +10,7 @@ import {
 import * as Styled from './AboutUs.styled';
 
 export const AboutUs = () => (
-	<Styled.Container>
+	<Styled.Container id={ANCHORS.ABOUT_US}>
 		<Title type={TitleType.h2} content={ABOUT_US_TITLE} />
 		<Styled.ContentContainer>
 			<Styled.ImageContainer>

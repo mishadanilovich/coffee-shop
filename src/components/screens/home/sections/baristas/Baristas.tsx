@@ -1,5 +1,6 @@
 import { SwiperSlide } from 'swiper/react';
 import { BaristaCard, CubeSlider, Title, TitleType } from '@/components/ui';
+import { ANCHORS } from '@/components/constants';
 
 import { BARISTAS_TITLE } from './constants';
 import { BaristasProps } from './Baristas.interface';
@@ -15,7 +16,7 @@ export const Baristas = ({ baristas }: BaristasProps) => {
 	};
 
 	return (
-		<Styled.Container>
+		<Styled.Container id={ANCHORS.BARISTAS}>
 			<Title type={TitleType.h2} content={BARISTAS_TITLE} />
 			<Styled.Content>
 				<CubeSlider>{getSliders()}</CubeSlider>

@@ -1,5 +1,5 @@
 import { Form, Map, Title, TitleType } from '@/components/ui';
-import { COFFEE_SHOP_COORDS } from '@/components/constants';
+import { ANCHORS, COFFEE_SHOP_COORDS } from '@/components/constants';
 
 import {
 	CONTACT_US_FORM_FIELDS,
@@ -17,7 +17,7 @@ export const ContactUs = () => {
 	};
 
 	return (
-		<Styled.Container>
+		<Styled.Container id={ANCHORS.CONTACTS}>
 			<Title content={CONTACT_US_TITLE} type={TitleType.h2} />
 			<Styled.Content>
 				<Styled.LeftContent>

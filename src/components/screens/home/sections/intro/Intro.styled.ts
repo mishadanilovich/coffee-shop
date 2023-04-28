@@ -14,6 +14,10 @@ export const Container = styled.div`
 	@media ${({ theme }) => theme.device.laptop} {
 		min-height: calc(100vh - 85px);
 	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		margin-bottom: ${({ theme }) => theme.spacing(0)};
+	}
 `;
 
 export const Content = styled.section`

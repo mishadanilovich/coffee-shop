@@ -12,7 +12,7 @@ export const Content = styled.div`
 	gap: ${({ theme }) => theme.spacing(4)};
 	margin-bottom: ${({ theme }) => theme.spacing(4)};
 
-	@media ${({ theme }) => theme.device.mobileS} {
+	@media ${({ theme }) => theme.device.mobileM} {
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	}
 `;

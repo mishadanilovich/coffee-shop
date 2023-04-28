@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui';
-import { COFFEE_SHOP_NAME } from '@/components/constants';
+import { ANCHORS, COFFEE_SHOP_NAME } from '@/components/constants';
 
 import { INTRO_BUTTON_LABEL, INTRO_DESCRIPTION } from './constants';
 import * as Styled from './Intro.styled';
 
 export const Intro = () => {
 	return (
-		<Styled.Container>
+		<Styled.Container id={ANCHORS.HOME}>
 			<Styled.Content>
 				<Styled.Title>{COFFEE_SHOP_NAME}</Styled.Title>
 				<Styled.Description>{INTRO_DESCRIPTION}</Styled.Description>
