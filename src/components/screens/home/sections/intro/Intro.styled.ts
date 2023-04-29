@@ -17,12 +17,17 @@ export const Container = styled.div`
 
 	@media ${({ theme }) => theme.device.mobileL} {
 		margin-bottom: ${({ theme }) => theme.spacing(0)};
+		justify-content: center;
 	}
 `;
 
 export const Content = styled.section`
 	display: flex;
 	flex-direction: column;
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		align-items: center;
+	}
 `;
 
 export const Title = styled.h1`

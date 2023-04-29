@@ -7,7 +7,7 @@ import * as Styled from './Menu.styled';
 
 export const Menu = ({ menu }: MenuProps) => {
 	const getContent = () => {
-		return menu.map((item, index) => <MenuCard key={index} {...item} />);
+		return menu.map((item, index) => <MenuCard key={index} data={item} />);
 	};
 
 	return (

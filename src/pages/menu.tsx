@@ -1,9 +1,10 @@
 import { Layout } from '@/components/layout';
+import { Menu } from '@/components/screens';
 
 const MenuPage = () => {
 	return (
 		<Layout title="Menu" description="Menu">
-			<div>Menu</div>
+			<Menu />
 		</Layout>
 	);
 };

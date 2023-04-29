@@ -5,7 +5,9 @@ import { BUTTON_LABEL } from './constants';
 
 import * as Styled from './MenuCard.styled';
 
-export const MenuCard = ({ image, title, description, price }: MenuCardProps) => {
+export const MenuCard = ({ data }: MenuCardProps) => {
+	const { image, title, description, price } = data;
+
 	return (
 		<Styled.Card>
 			<Styled.MenuImage src={image} alt={title} width={100} height={100} />

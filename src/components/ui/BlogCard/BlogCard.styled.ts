@@ -36,6 +36,7 @@ export const Title = styled.h3`
 `;
 
 export const Description = styled.p`
+	${({ theme }) => theme.typography['16R']};
 	color: ${({ theme }) => theme.palette.beige};
 	margin-bottom: ${({ theme }) => theme.spacing(3)};
 `;

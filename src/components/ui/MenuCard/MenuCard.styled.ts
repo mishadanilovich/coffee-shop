@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
 	${({ theme }) => theme.classes.card};
-	min-height: 350px;
+	min-height: 320px;
 	padding: ${({ theme }) => theme.spacing(8)};
 
 	transition: all 0.3s linear;
@@ -17,8 +17,8 @@ export const Card = styled.div`
 	}
 
 	@media ${({ theme }) => theme.device.mobileL} {
-		min-height: 320px;
 		padding: ${({ theme }) => theme.spacing(5)};
+		min-height: 290px;
 	}
 `;
 
@@ -41,7 +41,7 @@ export const Title = styled.h3`
 export const Description = styled.p`
 	${({ theme }) => theme.typography['16L']};
 	color: ${({ theme }) => theme.palette.lightGray};
-	margin-bottom: ${({ theme }) => theme.spacing(6)};
+	margin-bottom: ${({ theme }) => theme.spacing(3)};
 	transition: color 0.3s linear;
 `;
 

@@ -1,9 +1,4 @@
-interface MenuItem {
-	title: string;
-	image: string;
-	price: number;
-	discount?: number;
-}
+import { MenuItem } from '@/interfaces';
 
 export interface MenuProps {
 	menu: MenuItem[];

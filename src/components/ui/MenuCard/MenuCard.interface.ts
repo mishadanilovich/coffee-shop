@@ -1,6 +1,5 @@
+import { MenuItem } from '@/interfaces';
+
 export interface MenuCardProps {
-	title: string;
-	description?: string;
-	image: string;
-	price: number;
+	data: MenuItem;
 }
