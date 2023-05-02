@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui';
-import { ANCHORS, COFFEE_SHOP_NAME } from '@/components/constants';
+import { Link } from '@/components/ui';
+import { ANCHORS, COFFEE_SHOP_NAME, ROUTE } from '@/components/constants';
 
-import { INTRO_BUTTON_LABEL, INTRO_DESCRIPTION } from './constants';
+import { INTRO_LINK_LABEL, INTRO_DESCRIPTION } from './constants';
 import * as Styled from './Intro.styled';
 
 export const Intro = () => {
@@ -10,7 +10,7 @@ export const Intro = () => {
 			<Styled.Content>
 				<Styled.Title>{COFFEE_SHOP_NAME}</Styled.Title>
 				<Styled.Description>{INTRO_DESCRIPTION}</Styled.Description>
-				<Button label={INTRO_BUTTON_LABEL} />
+				<Link href={ROUTE.MENU}>{INTRO_LINK_LABEL}</Link>
 			</Styled.Content>
 		</Styled.Container>
 	);

@@ -11,3 +11,7 @@ export * from './Error';
 export * from './Input';
 export * from './Form';
 export * from './BlogCard';
+export * from './Link';
+export * from './ReactPortal';
+export * from './BasketModal';
+export * from './BasketItemCard';

@@ -1,7 +1,7 @@
 import { FieldValues, useForm } from 'react-hook-form';
-import { Button, Input } from '@/components/ui';
+import { Button, Input, InputUse } from '@/components/ui';
 
-import { FormProps } from './Form.interface';
+import { FormProps, FormTheme } from './Form.interface';
 import * as Styled from './Form.styled';
 
 export const Form = <FormData extends FieldValues>({
@@ -9,7 +9,8 @@ export const Form = <FormData extends FieldValues>({
 	fields,
 	submitButtonLabel,
 	onSubmit,
-	defaultValues
+	defaultValues,
+	theme = FormTheme.white
 }: FormProps<FormData>) => {
 	const {
 		register,
@@ -21,6 +22,7 @@ export const Form = <FormData extends FieldValues>({
 			<Input
 				key={index}
 				error={errors[field.id]?.message as string}
+				use={theme === FormTheme.white ? InputUse.primary : InputUse.secondary}
 				{...register(field.id, { ...field.options })}
 				{...field}
 			/>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from '@/components/ui';
 
 export const Container = styled.section`
 	${({ theme }) => theme.classes.container};
@@ -19,5 +19,4 @@ export const Content = styled.div`
 
 export const StyledLink = styled(Link)`
 	align-self: center;
-	${({ theme }) => theme.classes.styledLink};
 `;

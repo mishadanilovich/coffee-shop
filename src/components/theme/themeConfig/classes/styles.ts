@@ -42,23 +42,6 @@ export const section: StyledCSS = css`
 	}
 `;
 
-export const styledLink: StyledCSS = css`
-	min-height: 30px;
-	width: fit-content;
-	background: transparent;
-	padding: ${({ theme }) => theme.spacing(2, 8)};
-
-	border: ${({ theme }) => theme.borders.default};
-	border-radius: 5px;
-
-	transition: all 0.3s linear;
-
-	&:hover {
-		color: ${({ theme }) => theme.palette.black};
-		background: ${({ theme }) => theme.palette.beige};
-	}
-`;
-
 export const card: StyledCSS = css`
 	display: flex;
 	flex-direction: column;

@@ -1,6 +1,11 @@
 import { FieldValues, Path, RegisterOptions } from 'react-hook-form';
 import { InputProps } from '../Input';
 
+export enum FormTheme {
+	dark = 'dark',
+	white = 'white'
+}
+
 export interface FormField<FormData extends FieldValues>
 	extends Pick<InputProps, 'leftIcon' | 'placeholder' | 'type'> {
 	id: Path<FormData>;
@@ -13,4 +18,5 @@ export interface FormProps<FormData extends FieldValues> {
 	submitButtonLabel: string;
 	onSubmit: (data: FormData) => void;
 	defaultValues: FormData;
+	theme?: FormTheme;
 }

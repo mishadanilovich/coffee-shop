@@ -1,4 +1,4 @@
-import { MenuCard, Title, TitleType } from '@/components/ui';
+import { LinkUse, MenuCard, Title, TitleType } from '@/components/ui';
 import { ROUTE } from '@/components/constants';
 
 import { SEE_MORE, MENU_TITLE } from './constants';
@@ -14,7 +14,9 @@ export const Menu = ({ menu }: MenuProps) => {
 		<Styled.Container>
 			<Title type={TitleType.h2} content={MENU_TITLE} />
 			<Styled.Content>{getContent()}</Styled.Content>
-			<Styled.StyledLink href={ROUTE.MENU}>{SEE_MORE}</Styled.StyledLink>
+			<Styled.StyledLink use={LinkUse.secondary} href={ROUTE.MENU}>
+				{SEE_MORE}
+			</Styled.StyledLink>
 		</Styled.Container>
 	);
 };

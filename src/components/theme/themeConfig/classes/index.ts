@@ -1,4 +1,4 @@
-import { card, container, section, styledLink } from './styles';
+import { card, container, section } from './styles';
 
 export const classes = {
 	container,
@@ -13,6 +13,5 @@ export const classes = {
 		alignItems: 'center',
 		justifyContent: 'space-between'
 	},
-	card,
-	styledLink
+	card
 };

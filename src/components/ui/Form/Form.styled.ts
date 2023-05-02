@@ -9,4 +9,5 @@ export const Form = styled.form`
 	flex-direction: column;
 	align-items: center;
 	row-gap: ${({ theme }) => theme.spacing(7)};
+	width: 100%;
 `;

@@ -1,2 +1,4 @@
 export * from './Button';
-export * from './Button.interface';
+import { ButtonUse } from './Button.interface';
+
+export { ButtonUse };

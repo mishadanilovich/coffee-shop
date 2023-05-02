@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-export const Store = (props: SVGProps<SVGSVGElement>) => (
+export const Basket = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		height="24px"

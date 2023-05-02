@@ -8,4 +8,7 @@ export * from './User';
 export * from './Phone';
 export * from './Home';
 export * from './Email';
-export * from './Store';
+export * from './Basket';
+export * from './Cross';
+export * from './Plus';
+export * from './Minus';

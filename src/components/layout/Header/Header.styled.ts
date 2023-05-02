@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { Store as StyledStore } from '@/components/icons';
+import { Basket as StyledStore } from '@/components/icons';
 import { Navigation as StyledNavigation } from '@/components/ui';
 
 export const Header = styled.header`
