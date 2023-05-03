@@ -1,4 +1,5 @@
-import { Form, FormTheme, ReactPortal } from '@/components/ui';
+import { useEffect } from 'react';
+import { Form, FormTheme, ReactPortal, BasketItemCard } from '@/components/ui';
 
 import {
 	BASKET_TITLE,
@@ -7,11 +8,9 @@ import {
 	ORDER_DETAILS_FORM_TITLE,
 	ORDER_DETAILS_SUBMIT_BUTTON
 } from './constants';
+import { basket } from './mock';
 import { BasketModalProps, OrderDetailsFormData } from './BasketModal.interface';
 import * as Styled from './BasketModal.styled';
-import { BasketItemCard } from '@/components/ui/BasketItemCard';
-import { useEffect } from 'react';
-import { menu } from '@/components/screens/home/mock';
 
 export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 	const onFormSubmit = (data: OrderDetailsFormData) => {
@@ -39,7 +38,7 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 					</Styled.TitleContainer>
 					<Styled.Content>
 						<Styled.Basket>
-							{menu.map((item, index) => (
+							{basket.items.map((item, index) => (
 								<BasketItemCard
 									key={index}
 									data={item}

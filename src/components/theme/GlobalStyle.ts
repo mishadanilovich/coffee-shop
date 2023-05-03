@@ -79,4 +79,8 @@ export const GlobalStyle = createGlobalStyle`
 	h3 {
 	  	${({ theme }) => theme.typography['25B']};
 	}
+
+    h4 {
+      ${({ theme }) => theme.typography['20B']};
+    }
 `;

@@ -22,7 +22,6 @@ export const Modal = styled.div`
 
 	display: flex;
 	flex-direction: column;
-	max-height: 600px;
 	width: 100%;
 	max-width: 900px;
 	background: ${({ theme }) => theme.palette.white};
@@ -40,6 +39,7 @@ const paddingStyle = css`
 export const TitleContainer = styled.div`
 	${({ theme }) => theme.classes.contentBetween}
 	${paddingStyle};
+	border-bottom: 1px solid ${({ theme }) => theme.palette.lightBlack};
 
 	position: relative;
 
@@ -73,11 +73,9 @@ export const Content = styled.div`
 
 	display: flex;
 	align-items: center;
-	height: 100%;
+	height: 450px;
 	width: 100%;
 	gap: ${({ theme }) => theme.spacing(5)};
-
-	background: ${({ theme }) => theme.palette.lightGray};
 `;
 
 export const Basket = styled.div`

@@ -44,6 +44,14 @@ export const typography: { [key: string]: StyledCSS } = {
 		font-weight: 400;
 		line-height: 1.8;
 	`,
+	'20B': css`
+		font-size: 20px;
+		font-weight: 700;
+
+		@media ${({ theme }) => theme.device.tablet} {
+			font-size: 18px;
+		}
+	`,
 	'25B': css`
 		font-size: 25px;
 		font-weight: 700;
