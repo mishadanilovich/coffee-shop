@@ -5,7 +5,6 @@ export const Container = styled.div`
 	display: flex;
 	column-gap: ${({ theme }) => theme.spacing(3)};
 	width: 100%;
-	min-height: 150px;
 	padding: ${({ theme }) => theme.spacing(4, 5)};
 	border-radius: 10px;
 	background: ${({ theme }) => theme.palette.lightBlack};
@@ -17,9 +16,9 @@ export const StyledImage = styled(Image)`
 	border-radius: 50%;
 	border: ${({ theme }) => theme.borders.image};
 
-	@media ${({ theme }) => theme.device.mobileM} {
-		height: 90px;
-		width: 90px;
+	@media ${({ theme }) => theme.device.mobileL} {
+		height: 75px;
+		width: 75px;
 	}
 `;
 
@@ -46,6 +45,10 @@ export const ActionsContainer = styled.div`
 
 	${({ theme }) => theme.typography['20R']};
 	line-height: unset;
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		font-size: 17px;
+	}
 `;
 
 export const ActionsButton = styled.button`
@@ -65,6 +68,13 @@ export const ActionsButton = styled.button`
 
 		& > svg {
 			color: ${({ theme }) => theme.palette.beige};
+		}
+	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		& > svg {
+			height: 16px;
+			width: 16px;
 		}
 	}
 `;

@@ -32,10 +32,15 @@ export const Form = <FormData extends FieldValues>({
 	const onFormSubmit = handleSubmit(data => onSubmit(data));
 
 	return (
-		<Styled.Form onSubmit={onFormSubmit}>
-			{title && <Styled.Title>{title}</Styled.Title>}
+		<Styled.Form onSubmit={onFormSubmit} className="form">
+			{title && <Styled.Title className="form-title">{title}</Styled.Title>}
 			{getFormFields()}
-			<Button type="submit" isLoading={isSubmitting} label={submitButtonLabel} />
+			<Button
+				type="submit"
+				className="form-button"
+				isLoading={isSubmitting}
+				label={submitButtonLabel}
+			/>
 		</Styled.Form>
 	);
 };

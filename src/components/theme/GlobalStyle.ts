@@ -70,10 +70,12 @@ export const GlobalStyle = createGlobalStyle`
 	
 	h1 {
 	  	${({ theme }) => theme.typography['60B']};
+	  	text-transform: uppercase;
 	}
 	
 	h2 {
 	  	${({ theme }) => theme.typography['40B']};
+      	text-transform: uppercase;
 	}
 	
 	h3 {
