@@ -1,28 +1,25 @@
-import styled, { css } from 'styled-components';
+import Link from 'next/link';
+import styled from 'styled-components';
 import { SocialIconProps } from './SocialIcon.interface';
 
-const iconBorder = css`
-	border-radius: 50%;
-	border: 1px solid currentColor;
-	padding: ${({ theme }) => theme.spacing(2)};
-`;
-
-export const Icon = styled.a<Pick<SocialIconProps, 'socialLink' | 'hasBorder'>>`
+export const IconLink = styled(Link)<Pick<SocialIconProps, 'href'>>`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	padding: ${({ theme }) => theme.spacing(2)};
 	position: relative;
 	z-index: 0;
 
+	border-radius: 50%;
+	border: 1px solid currentColor;
+
 	transition: background-color 0.3s ease;
 
-	${({ socialLink }) => {
-		return `cursor: ${socialLink ? 'default' : 'pointer'};`;
+	${({ href }) => {
+		return `cursor: ${href ? 'pointer' : 'default'};`;
 	}}
 
-	${({ hasBorder }) => hasBorder && iconBorder}
-  
-  	&:hover {
+	&:hover {
 		background: ${({ theme }) => theme.palette.beige};
 	}
 `;

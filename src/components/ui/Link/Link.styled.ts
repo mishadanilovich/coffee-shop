@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import { LinkUse, StyledLinkProps } from './Link.interface';
 
@@ -23,7 +23,7 @@ export const primaryLink = css`
 	}
 `;
 
-export const StyledLink = styled(Link)<Pick<StyledLinkProps, 'use'>>`
+export const StyledLink = styled(NextLink)<Pick<StyledLinkProps, 'use'>>`
 	${({ theme }) => theme.typography['16R']};
 
 	display: flex;

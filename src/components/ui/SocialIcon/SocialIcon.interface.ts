@@ -1,13 +1,11 @@
 import { FunctionComponent, SVGProps } from 'react';
+import { LinkProps } from 'next/link';
 
 export type IconType = FunctionComponent<SVGProps<SVGSVGElement>>;
 
-export interface SocialIconProps {
+export interface SocialIconProps extends Pick<LinkProps, 'href'> {
 	className?: string;
-
-	socialLink?: string;
 	type: IconType;
 	size?: number;
 	color?: string;
-	hasBorder?: boolean;
 }

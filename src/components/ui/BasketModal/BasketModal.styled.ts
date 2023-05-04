@@ -24,6 +24,7 @@ export const Modal = styled.div`
 	flex-direction: column;
 	width: 100%;
 	max-width: 900px;
+	margin: ${({ theme }) => theme.spacing(3)};
 	background: ${({ theme }) => theme.palette.white};
 	border-radius: 10px;
 

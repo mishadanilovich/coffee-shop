@@ -6,12 +6,11 @@ export const SocialIcon = ({
 	size = 18,
 	color = 'white',
 	type: IconComponent,
-	socialLink,
-	hasBorder = true
+	href
 }: SocialIconProps) => (
-	<Styled.Icon className={className} target="_blank" href={socialLink} hasBorder={hasBorder}>
+	<Styled.IconLink className={className} rel="noopener noreferrer" target="_blank" href={href}>
 		<Styled.SvgWrapper size={size} color={color}>
 			{IconComponent && <IconComponent />}
 		</Styled.SvgWrapper>
-	</Styled.Icon>
+	</Styled.IconLink>
 );
