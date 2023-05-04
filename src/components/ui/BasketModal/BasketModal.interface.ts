@@ -1,9 +1,9 @@
-import { MenuItem } from '@/interfaces';
+import { BasketItem } from '@/interfaces';
 import { DEFAULT_VALUES } from './constants';
 
 export interface BasketModalProps {
 	isOpen: boolean;
-	data: MenuItem[];
+	data: BasketItem[];
 	handleClose: () => void;
 }
 

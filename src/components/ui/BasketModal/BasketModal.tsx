@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Form, FormTheme, ReactPortal, BasketItemCard } from '@/components/ui';
+import { CURRENCY } from '@/components/constants';
 
 import {
 	BASKET_TITLE,
+	BASKET_TOTAL_PRICE_LABEL,
 	DEFAULT_VALUES,
 	ORDER_DETAILS_FORM_FIELDS,
 	ORDER_DETAILS_FORM_TITLE,
@@ -27,6 +29,8 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 
 	if (!isOpen) return null;
 
+	const { items: basketItems, totalPrice } = basket;
+
 	return (
 		<ReactPortal wrapperId="basket-react-portal">
 			<>
@@ -34,11 +38,12 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 				<Styled.Modal>
 					<Styled.TitleContainer>
 						<Styled.Title>{BASKET_TITLE}</Styled.Title>
+						<Styled.TotalPrice>{`${BASKET_TOTAL_PRICE_LABEL} ${totalPrice} ${CURRENCY}`}</Styled.TotalPrice>
 						<Styled.Cross onClick={handleClose} />
 					</Styled.TitleContainer>
 					<Styled.Content>
 						<Styled.Basket>
-							{basket.items.map((item, index) => (
+							{basketItems.map((item, index) => (
 								<BasketItemCard
 									key={index}
 									data={item}

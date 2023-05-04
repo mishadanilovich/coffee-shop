@@ -1,7 +1,7 @@
-import { MenuItem } from '@/interfaces';
+import { BasketItem } from '@/interfaces';
 
 export interface BasketItemCardProps {
-	data: MenuItem;
+	data: BasketItem;
 	handleIncrease: (itemId: string) => void;
 	handleDecrease: (itemId: string) => void;
 }

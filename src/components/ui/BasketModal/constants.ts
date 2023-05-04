@@ -1,4 +1,5 @@
 export const BASKET_TITLE = 'Basket';
+export const BASKET_TOTAL_PRICE_LABEL = 'Total price:';
 
 import { FormField } from '@/components/ui';
 import { Phone, User } from '@/components/icons';

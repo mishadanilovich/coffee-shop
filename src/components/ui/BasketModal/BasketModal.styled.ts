@@ -59,6 +59,11 @@ export const Title = styled.h3`
 	letter-spacing: ${({ theme }) => theme.spacing(1)};
 `;
 
+export const TotalPrice = styled.span`
+	margin-left: auto;
+	margin-right: ${({ theme }) => theme.spacing(4)};
+`;
+
 export const Cross = styled(StyledCross)`
 	cursor: pointer;
 	transition: fill 0.2s ease-in-out;

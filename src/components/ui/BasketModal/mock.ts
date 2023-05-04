@@ -4,7 +4,7 @@ export const basket = {
 			id: '1',
 			title: 'Espresso',
 			image: '/menu-1.png',
-			description: '',
+			description: 'Espresso, cream, milk, vanilla syrup, nut and chocolate paste.',
 			price: 3,
 			count: 3
 		},

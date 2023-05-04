@@ -4,5 +4,4 @@ export interface MenuItem {
 	description?: string;
 	image: string;
 	price: number;
-	count: number;
 }
