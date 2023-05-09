@@ -21,7 +21,10 @@ export const Header = () => {
 			{isStoreModalOpen && (
 				<BasketModal
 					isOpen={isStoreModalOpen}
-					data={{ items: [], totalPrice: 0 }}
+					data={{
+						items: [],
+						totalPrice: 0
+					}}
 					handleClose={() => setIsStoreModalOpen(false)}
 				/>
 			)}

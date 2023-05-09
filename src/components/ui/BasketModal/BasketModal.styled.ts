@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Cross as StyledCross } from '@/components/icons';
 
 const scrollStyles = css`
-	overflow-y: scroll;
+	overflow: overlay;
 
 	&::-webkit-scrollbar {
 		width: 6px;
@@ -13,6 +13,10 @@ const scrollStyles = css`
 		background: ${({ theme }) => theme.palette.lightBlack};
 		border-radius: 20px;
 	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
 `;
 
 const paddingStyle = css`
@@ -20,6 +24,10 @@ const paddingStyle = css`
 
 	@media ${({ theme }) => theme.device.mobileL} {
 		padding: ${({ theme }) => theme.spacing(5, 3, 5, 6)};
+	}
+
+	@media ${({ theme }) => theme.device.mobileS} {
+		padding-left: ${({ theme }) => theme.spacing(4)};
 	}
 `;
 
@@ -99,7 +107,7 @@ export const TotalPrice = styled.span`
 	margin-right: ${({ theme }) => theme.spacing(4)};
 
 	@media ${({ theme }) => theme.device.mobileL} {
-		margin-right: ${({ theme }) => theme.spacing(1)};
+		margin-right: ${({ theme }) => theme.spacing(2)};
 	}
 `;
 
@@ -109,6 +117,11 @@ export const Cross = styled(StyledCross)`
 
 	&:hover {
 		fill: ${({ theme }) => theme.palette.beige};
+	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		height: 22px;
+		width: 22px;
 	}
 `;
 
@@ -131,7 +144,7 @@ export const Basket = styled.div<{ empty: boolean }>`
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme.spacing(3)};
-	padding-right: ${({ theme }) => theme.spacing(2)};
+	padding-right: ${({ theme }) => theme.spacing(3)};
 
 	${scrollStyles};
 
@@ -141,6 +154,10 @@ export const Basket = styled.div<{ empty: boolean }>`
 
 	@media ${({ theme }) => theme.device.tablet} {
 		height: auto;
+	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		max-height: 300px;
 	}
 `;
 

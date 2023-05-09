@@ -24,7 +24,7 @@ export const BasketModal = ({ isOpen, data: basketData, handleClose }: BasketMod
 		document.body.style.overflow = 'hidden';
 
 		return () => {
-			document.body.style.overflow = 'unset';
+			document.body.style.overflow = 'overlay';
 		};
 	}, [isOpen]);
 

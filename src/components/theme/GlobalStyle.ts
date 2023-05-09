@@ -24,6 +24,10 @@ export const GlobalStyle = createGlobalStyle`
 	  	background: ${({ theme }) => theme.palette.black};
 	}
 	
+	body {
+      overflow: overlay;
+	}
+	
 	html {
 	  	scroll-behavior: smooth;
 	  	scroll-padding-top: 100px;
