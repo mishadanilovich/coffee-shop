@@ -56,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
 	  	color: currentColor;
 	  	outline: none;
 	  	border: none;
+      	background: none;
 	}
 	
 	input,

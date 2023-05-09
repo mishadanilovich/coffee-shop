@@ -8,6 +8,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 		<Styled.InputBox error={error} use={use}>
 			{IconComponent && <IconComponent />}
 			<Styled.Input
+				autoComplete="off"
 				ref={ref}
 				isLeftIcon={Boolean(IconComponent)}
 				name={inputProps.id}

@@ -70,7 +70,7 @@ export const TitleContainer = styled.div`
 	${({ theme }) => theme.classes.contentBetween}
 	${paddingStyle};
 	padding-right: ${({ theme }) => theme.spacing(8)};
-	border-bottom: 1px solid ${({ theme }) => theme.palette.lightBlack};
+	border-bottom: ${({ theme }) => theme.borders.lightBlack};
 
 	position: relative;
 
@@ -97,6 +97,10 @@ export const Title = styled.h3`
 export const TotalPrice = styled.span`
 	margin-left: auto;
 	margin-right: ${({ theme }) => theme.spacing(4)};
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		margin-right: ${({ theme }) => theme.spacing(1)};
+	}
 `;
 
 export const Cross = styled(StyledCross)`
@@ -119,11 +123,11 @@ export const Content = styled.div`
 	row-gap: ${({ theme }) => theme.spacing(7)};
 `;
 
-export const Basket = styled.div`
-	align-self: start;
+export const Basket = styled.div<{ empty: boolean }>`
+	align-self: ${({ empty }) => (empty ? 'unset' : 'start')};
 	flex: 1 1 360px;
 	height: 100%;
-	max-height: 450px;
+	max-height: 500px;
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme.spacing(3)};
@@ -138,6 +142,14 @@ export const Basket = styled.div`
 	@media ${({ theme }) => theme.device.tablet} {
 		height: auto;
 	}
+`;
+
+export const Empty = styled.span`
+	${({ theme }) => theme.typography['20R']};
+
+	${({ theme }) => theme.classes.contentCenter};
+	column-gap: ${({ theme }) => theme.spacing(3)};
+	color: ${({ theme }) => theme.palette.lightBlack};
 `;
 
 export const OrderDetails = styled.div`

@@ -1,4 +1,4 @@
-import { FormField } from '@/components/ui';
+import { InputFormField } from '@/components/ui';
 import { Email, Home, Phone, User } from '@/components/icons';
 import { TitleTextUse } from '@/interfaces';
 
@@ -26,7 +26,7 @@ export const DEFAULT_VALUES = {
 
 const emailReg = new RegExp('[a-z0-9]+@[a-z]+\\.[a-z]{2,3}');
 const phoneReg = new RegExp('^\\+375\\((17|29|33|44)\\)[0-9]{3}-[0-9]{2}-[0-9]{2}$');
-export const CONTACT_US_FORM_FIELDS: FormField<ContactUsFormData>[] = [
+export const CONTACT_US_FORM_FIELDS: InputFormField<ContactUsFormData>[] = [
 	{
 		id: 'name',
 		type: 'text',

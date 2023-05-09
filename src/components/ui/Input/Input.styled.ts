@@ -14,6 +14,7 @@ const primaryStyles = css`
 const secondaryStyles = css`
 	color: ${({ theme }) => theme.palette.white};
 	background: ${({ theme }) => theme.palette.lightBlack};
+	border: ${({ theme }) => theme.borders.lightBlack};
 
 	& > svg {
 		color: ${({ theme }) => theme.palette.lightGray};
@@ -28,11 +29,7 @@ export const InputBox = styled.div<Pick<InputProps, 'error' | 'use'>>`
 
 	position: relative;
 
-	${({ error }) =>
-		error &&
-		css`
-			border: 1px solid ${({ theme }) => theme.palette.red};
-		`}
+	transition: border 0.2s ease-in-out;
 
 	& > svg {
 		width: 20px;
@@ -41,6 +38,12 @@ export const InputBox = styled.div<Pick<InputProps, 'error' | 'use'>>`
 	}
 
 	${({ use }) => (use === InputUse.primary ? primaryStyles : secondaryStyles)};
+
+	${({ error }) =>
+		error &&
+		css`
+			border: ${({ theme }) => theme.borders.error};
+		`}
 `;
 export const Input = styled.input<{ isLeftIcon?: boolean }>`
 	${({ theme }) => theme.typography['16R']};
@@ -57,6 +60,5 @@ export const Error = styled.p`
 	transform: translateY(-50%);
 	${({ theme }) => theme.typography['13L']};
 	color: ${({ theme }) => theme.palette.red};
-	margin-top: ${({ theme }) => theme.spacing(1)};
 	text-align: start;
 `;

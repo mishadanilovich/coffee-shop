@@ -12,3 +12,7 @@ export * from './Basket';
 export * from './Cross';
 export * from './Plus';
 export * from './Minus';
+export * from './Store';
+export * from './Car';
+export * from './Card';
+export * from './Cash';

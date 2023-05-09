@@ -1,10 +1,14 @@
-import { BasketItem } from '@/interfaces';
-import { DEFAULT_VALUES } from './constants';
+import { Basket } from '@/interfaces';
 
 export interface BasketModalProps {
 	isOpen: boolean;
-	data: BasketItem[];
+	data: Basket;
 	handleClose: () => void;
 }
 
-export type OrderDetailsFormData = typeof DEFAULT_VALUES;
+export interface OrderDetailsFormData {
+	name: string;
+	phone: string;
+	deliveryMethod: string | null;
+	paymentMethod: string | null;
+}
