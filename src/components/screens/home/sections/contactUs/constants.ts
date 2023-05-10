@@ -57,7 +57,7 @@ export const CONTACT_US_FORM_FIELDS: InputFormField<ContactUsFormData>[] = [
 	},
 	{
 		id: 'phone',
-		type: 'tel',
+		type: 'text',
 		placeholder: 'Contact number',
 		options: {
 			required: 'Contact number is required',

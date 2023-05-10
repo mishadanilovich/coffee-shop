@@ -29,7 +29,7 @@ export const OptionsContainer = styled.div<Pick<DataPickerProps, 'error'>>`
 export const Option = styled.button<{ selected: boolean }>`
 	${({ theme }) => theme.typography['13L']};
 
-	flex: 1;
+	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -40,6 +40,14 @@ export const Option = styled.button<{ selected: boolean }>`
 
 	&:not(:last-of-type) {
 		border-right: ${({ theme }) => theme.borders.lightBlack};
+	}
+
+	&:first-of-type {
+		border-radius: 10px 0 0 10px;
+	}
+
+	&:last-of-type {
+		border-radius: 0 10px 10px 0;
 	}
 
 	transition: background-color 0.2s ease-in-out;
