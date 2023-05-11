@@ -33,10 +33,10 @@ export const Navigation = styled(StyledNavigation)`
 
 export const Logo = styled(Image)`
 	cursor: pointer;
-	transition: transform 0.6s ease-in-out;
+	transition: transform 1s ease-in-out;
 
 	&:hover {
-		transform: rotate(15deg);
+		transform: rotate(360deg);
 	}
 
 	@media ${({ theme }) => theme.device.laptop} {

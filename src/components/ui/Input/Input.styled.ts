@@ -42,6 +42,7 @@ export const InputBox = styled.div<Pick<InputProps, 'error' | 'use'>>`
 	${({ error }) =>
 		error &&
 		css`
+			margin-bottom: ${({ theme }) => theme.spacing(2)};
 			border: ${({ theme }) => theme.borders.error};
 		`}
 `;
@@ -56,8 +57,7 @@ export const Input = styled.input<{ isLeftIcon?: boolean }>`
 export const Error = styled.p`
 	position: absolute;
 	left: 0;
-	bottom: -50%;
-	transform: translateY(-50%);
+	top: 100%;
 	${({ theme }) => theme.typography['13L']};
 	color: ${({ theme }) => theme.palette.red};
 	text-align: start;
