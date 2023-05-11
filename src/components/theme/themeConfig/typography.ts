@@ -5,7 +5,7 @@ export const typography: { [key: string]: StyledCSS } = {
 	'13L': css`
 		font-size: 13px;
 		font-weight: 300;
-		line-height: 1.4;
+		line-height: 1.2;
 	`,
 	'16L': css`
 		font-size: 16px;

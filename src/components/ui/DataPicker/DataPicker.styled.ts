@@ -1,15 +1,8 @@
 import styled, { css } from 'styled-components';
 import { DataPickerProps } from '@/components/ui';
 
-export const Container = styled.div<Pick<DataPickerProps, 'error'>>`
-	position: relative;
+export const Container = styled.div`
 	width: 100%;
-
-	${({ error }) =>
-		error &&
-		css`
-			margin-bottom: ${({ theme }) => theme.spacing(2)};
-		`}
 `;
 
 export const Title = styled.span`
@@ -34,7 +27,7 @@ export const OptionsContainer = styled.div<Pick<DataPickerProps, 'error'>>`
 export const Option = styled.button<{ selected: boolean }>`
 	${({ theme }) => theme.typography['13L']};
 
-	flex: 1 1 auto;
+	flex: 1 1 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -65,9 +58,6 @@ export const Option = styled.button<{ selected: boolean }>`
 `;
 
 export const Error = styled.p`
-	position: absolute;
-	left: 0;
-	top: 100%;
 	${({ theme }) => theme.typography['13L']};
 	color: ${({ theme }) => theme.palette.red};
 	text-align: start;

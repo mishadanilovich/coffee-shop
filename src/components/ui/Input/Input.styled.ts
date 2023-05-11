@@ -21,13 +21,17 @@ const secondaryStyles = css`
 	}
 `;
 
+export const Container = styled.div`
+	width: 100%;
+`;
+
 export const InputBox = styled.div<Pick<InputProps, 'error' | 'use'>>`
 	display: flex;
 	align-items: center;
 	border-radius: 10px;
 	width: 100%;
 
-	position: relative;
+	overflow: hidden;
 
 	transition: border 0.2s ease-in-out;
 
@@ -42,7 +46,6 @@ export const InputBox = styled.div<Pick<InputProps, 'error' | 'use'>>`
 	${({ error }) =>
 		error &&
 		css`
-			margin-bottom: ${({ theme }) => theme.spacing(2)};
 			border: ${({ theme }) => theme.borders.error};
 		`}
 `;
@@ -55,9 +58,6 @@ export const Input = styled.input<{ isLeftIcon?: boolean }>`
 `;
 
 export const Error = styled.p`
-	position: absolute;
-	left: 0;
-	top: 100%;
 	${({ theme }) => theme.typography['13L']};
 	color: ${({ theme }) => theme.palette.red};
 	text-align: start;
