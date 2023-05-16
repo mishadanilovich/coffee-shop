@@ -29,5 +29,6 @@ export interface FormProps<FormData extends FieldValues> {
 	submitButtonLabel: string;
 	onSubmit: (data: FormData) => void;
 	defaultValues: FormData;
+	rowSpacing?: number;
 	theme?: FormTheme;
 }

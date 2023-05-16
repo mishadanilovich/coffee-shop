@@ -1,3 +1,4 @@
 export enum ROUTE {
-	MENU = '/menu'
+	MENU = '/menu',
+	AUTH = '/auth'
 }

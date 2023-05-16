@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { LinkProps } from 'next/link';
 
 export enum LinkUse {
@@ -8,5 +8,5 @@ export enum LinkUse {
 
 export interface StyledLinkProps extends Omit<LinkProps, 'as'> {
 	use?: LinkUse;
-	children?: React.ReactNode;
+	children?: ReactNode;
 }

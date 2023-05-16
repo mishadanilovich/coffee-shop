@@ -16,3 +16,4 @@ export * from './Store';
 export * from './Car';
 export * from './Card';
 export * from './Cash';
+export * from './Lock';

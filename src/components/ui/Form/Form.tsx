@@ -11,6 +11,7 @@ export const Form = <FormData extends FieldValues>({
 	submitButtonLabel,
 	onSubmit,
 	defaultValues,
+	rowSpacing = 4,
 	theme = FormTheme.white
 }: FormProps<FormData>) => {
 	const {
@@ -63,7 +64,7 @@ export const Form = <FormData extends FieldValues>({
 	const onFormSubmit = handleSubmit(data => onSubmit(data));
 
 	return (
-		<Styled.Form onSubmit={onFormSubmit} className="form">
+		<Styled.Form onSubmit={onFormSubmit} className="form" rowSpacing={rowSpacing}>
 			{title && <Styled.Title className="form-title">{title}</Styled.Title>}
 			{getFormFields()}
 			<Button

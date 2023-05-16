@@ -9,3 +9,4 @@ export * from './socialMedia';
 export * from './navItems';
 export * from './routes';
 export * from './anchors';
+export * from './regex';

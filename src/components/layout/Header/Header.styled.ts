@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import styled from 'styled-components';
-import { Basket as StyledStore } from '@/components/icons';
+import styled, { css } from 'styled-components';
+import { Basket as StyledStore, User } from '@/components/icons';
 import { Navigation as StyledNavigation } from '@/components/ui';
 
 export const Header = styled.header`
@@ -47,13 +47,25 @@ export const Logo = styled(Image)`
 
 export const Actions = styled.div`
 	display: flex;
+	align-items: center;
+	column-gap: ${({ theme }) => theme.spacing(2)};
 `;
 
-export const Store = styled(StyledStore)`
+const actionStyles = css`
+	width: 27px;
+	height: 27px;
 	cursor: pointer;
 	transition: color 0.2s ease-in-out;
 
 	&:hover {
 		color: ${({ theme }) => theme.palette.beige};
 	}
+`;
+
+export const Store = styled(StyledStore)`
+	${actionStyles};
+`;
+
+export const Avatar = styled(User)`
+	${actionStyles};
 `;
