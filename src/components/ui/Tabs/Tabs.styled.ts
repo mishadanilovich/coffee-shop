@@ -3,8 +3,10 @@ import styled, { css } from 'styled-components';
 export const LabelsContainer = styled.div`
 	display: flex;
 	align-items: center;
+	width: fit-content;
 	gap: ${({ theme }) => theme.spacing(3)};
 	margin-bottom: ${({ theme }) => theme.spacing(5)};
+	margin-left: auto;
 `;
 
 const selectedStyles = css`
