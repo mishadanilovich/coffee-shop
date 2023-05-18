@@ -5,6 +5,9 @@ import { LoginFormData } from '@/interfaces';
 
 export const LOGIN_SUBMIT_BUTTON = 'Log in';
 
+export const SUCCESSFUL_LOGIN = 'Authorization is successful!';
+export const INVALID_LOGIN = 'Email or password is wrong!';
+
 export const DEFAULT_VALUES = {
 	email: '',
 	password: ''

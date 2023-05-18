@@ -1,12 +1,18 @@
 import { useRouter } from 'next/router';
 import { setCookie } from 'nookies';
-import { Form, FormTheme } from '@/components/ui';
+import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { LoginFormData } from '@/interfaces';
 import { ROUTE } from '@/components/constants';
 
 import * as Services from '@/services';
 
-import { DEFAULT_VALUES, LOGIN_FORM_FIELDS, LOGIN_SUBMIT_BUTTON } from './constants';
+import {
+	DEFAULT_VALUES,
+	INVALID_LOGIN,
+	LOGIN_FORM_FIELDS,
+	LOGIN_SUBMIT_BUTTON,
+	SUCCESSFUL_LOGIN
+} from './constants';
 
 export const LoginForm = () => {
 	const router = useRouter();
@@ -19,9 +25,17 @@ export const LoginForm = () => {
 				path: '/'
 			});
 
-			await router.push(ROUTE.HOME);
+			Notification({
+				type: NotificationType.success,
+				message: SUCCESSFUL_LOGIN
+			});
+
+			router.push(ROUTE.HOME);
 		} catch (err) {
-			console.warn('LoginForm', err);
+			Notification({
+				type: NotificationType.failure,
+				message: INVALID_LOGIN
+			});
 		}
 	};
 

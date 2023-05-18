@@ -1,12 +1,22 @@
+import { useRouter } from 'next/router';
 import { setCookie } from 'nookies';
-import { Form, FormTheme } from '@/components/ui';
+import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { RegisterFromData } from '@/interfaces';
+import { ROUTE } from '@/components/constants';
 
 import * as Services from '@/services';
 
-import { DEFAULT_VALUES, SIGN_UP_FORM_FIELDS, SIGN_UP_SUBMIT_BUTTON } from './constants';
+import {
+	DEFAULT_VALUES,
+	INVALID_REGISTRATION,
+	SIGN_UP_FORM_FIELDS,
+	SIGN_UP_SUBMIT_BUTTON,
+	SUCCESSFUL_REGISTRATION
+} from './constants';
 
 export const SignUpForm = () => {
+	const router = useRouter();
+
 	const onFormSubmit = async (data: RegisterFromData) => {
 		try {
 			const { token } = await Services.auth.register(data);
@@ -14,8 +24,18 @@ export const SignUpForm = () => {
 			setCookie(null, '_token', token, {
 				path: '/'
 			});
+
+			Notification({
+				type: NotificationType.success,
+				message: SUCCESSFUL_REGISTRATION
+			});
+
+			router.push(ROUTE.HOME);
 		} catch (err) {
-			console.warn('LoginForm', err);
+			Notification({
+				type: NotificationType.failure,
+				message: INVALID_REGISTRATION
+			});
 		}
 	};
 

@@ -5,6 +5,9 @@ import { RegisterFromData } from '@/interfaces';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 
+export const SUCCESSFUL_REGISTRATION = 'Registration is successful!';
+export const INVALID_REGISTRATION = 'Error during registration!';
+
 export const DEFAULT_VALUES = {
 	username: '',
 	email: '',
@@ -55,7 +58,7 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 			required: 'Password is required',
 			minLength: {
 				value: 10,
-				message: 'Min 10'
+				message: 'Password must be longer than or equal to 10 characters'
 			}
 		},
 		leftIcon: Lock
