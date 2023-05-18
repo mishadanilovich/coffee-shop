@@ -1,5 +1,8 @@
+import { GetServerSidePropsContext } from 'next';
 import { Home } from '@/components/screens';
 import { Layout } from '@/components/layout';
+
+import { checkAuth } from '@/components/utils';
 
 const HomePage = () => {
 	return (
@@ -10,6 +13,18 @@ const HomePage = () => {
 			<Home />
 		</Layout>
 	);
+};
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+	const authProps = await checkAuth(ctx);
+
+	if ('redirect' in authProps) {
+		return authProps;
+	}
+
+	return {
+		props: {}
+	};
 };
 
 export default HomePage;

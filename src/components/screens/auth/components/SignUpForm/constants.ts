@@ -1,18 +1,18 @@
 import { InputFormField } from '@/components/ui';
-import { Email, Lock, User } from '@/components/icons';
-import { emailReg } from '@/components/constants';
-
-import { SignUpFormData } from './SignUpForm.interface';
+import { Email, Lock, Phone, User } from '@/components/icons';
+import { emailReg, phoneReg } from '@/components/constants';
+import { RegisterFromDTO } from '@/api/dto';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 
 export const DEFAULT_VALUES = {
 	username: '',
 	email: '',
-	password: ''
+	password: '',
+	contactPhone: ''
 };
 
-export const SIGN_UP_FORM_FIELDS: InputFormField<SignUpFormData>[] = [
+export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromDTO>[] = [
 	{
 		id: 'username',
 		type: 'text',
@@ -34,6 +34,18 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<SignUpFormData>[] = [
 			}
 		},
 		leftIcon: Email
+	},
+	{
+		id: 'contactPhone',
+		type: 'text',
+		placeholder: 'Contact number',
+		options: {
+			pattern: {
+				value: phoneReg,
+				message: 'Invalid phone number format (+375(33)333-33-33)'
+			}
+		},
+		leftIcon: Phone
 	},
 	{
 		id: 'password',

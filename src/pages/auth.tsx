@@ -1,5 +1,8 @@
+import { GetServerSidePropsContext } from 'next';
 import { Meta } from '@/components/seo';
 import { Auth } from '@/components/screens';
+import { checkAuth } from '@/components/utils';
+import { ROUTE } from '@/components/constants';
 
 const AuthPage = () => {
 	return (
@@ -9,6 +12,23 @@ const AuthPage = () => {
 			</main>
 		</Meta>
 	);
+};
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+	const authProps = await checkAuth(ctx);
+
+	if (!('redirect' in authProps)) {
+		return {
+			redirect: {
+				destination: ROUTE.HOME,
+				permanent: false
+			}
+		};
+	}
+
+	return {
+		props: {}
+	};
 };
 
 export default AuthPage;
