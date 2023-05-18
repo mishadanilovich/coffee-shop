@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { setCookie } from 'nookies';
 import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { RegisterFromData } from '@/interfaces';

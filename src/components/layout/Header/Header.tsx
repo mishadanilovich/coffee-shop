@@ -1,12 +1,20 @@
-import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { BasketModal, Dropdown } from '@/components/ui';
 import { NAV_ITEMS, ROUTE } from '@/components/constants';
 
+import * as Services from '@/services';
+
 import * as Styled from './Header.styled';
-import { BasketModal } from '@/components/ui';
 
 export const Header = () => {
+	const router = useRouter();
 	const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);
+
+	const onClickLogout = () => {
+		Services.auth.logout();
+		router.push(ROUTE.AUTH);
+	};
 
 	return (
 		<Styled.Header>
@@ -14,9 +22,9 @@ export const Header = () => {
 			<Styled.Navigation navItems={NAV_ITEMS} />
 			<Styled.Actions>
 				<Styled.Store onClick={() => setIsStoreModalOpen(!isStoreModalOpen)} />
-				<Link href={ROUTE.AUTH}>
+				<Dropdown content={[{ label: 'Logout', onClick: onClickLogout }]}>
 					<Styled.Avatar />
-				</Link>
+				</Dropdown>
 			</Styled.Actions>
 			{isStoreModalOpen && (
 				<BasketModal
