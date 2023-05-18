@@ -1,7 +1,7 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Lock } from '@/components/icons';
 import { emailReg } from '@/components/constants';
-import { LoginFormDTO } from '@/api/dto';
+import { LoginFormData } from '@/interfaces';
 
 export const LOGIN_SUBMIT_BUTTON = 'Log in';
 
@@ -10,7 +10,7 @@ export const DEFAULT_VALUES = {
 	password: ''
 };
 
-export const LOGIN_FORM_FIELDS: InputFormField<LoginFormDTO>[] = [
+export const LOGIN_FORM_FIELDS: InputFormField<LoginFormData>[] = [
 	{
 		id: 'email',
 		type: 'text',

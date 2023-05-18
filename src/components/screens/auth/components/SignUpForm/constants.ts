@@ -1,7 +1,7 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Lock, Phone, User } from '@/components/icons';
 import { emailReg, phoneReg } from '@/components/constants';
-import { RegisterFromDTO } from '@/api/dto';
+import { RegisterFromData } from '@/interfaces';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 
@@ -12,7 +12,7 @@ export const DEFAULT_VALUES = {
 	contactPhone: ''
 };
 
-export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromDTO>[] = [
+export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 	{
 		id: 'username',
 		type: 'text',
