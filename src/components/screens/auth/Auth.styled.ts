@@ -40,7 +40,6 @@ export const Container = styled.div`
 export const Header = styled.div`
 	display: flex;
 	align-items: center;
-	margin-bottom: ${({ theme }) => theme.spacing(4)};
 
 	position: relative;
 
@@ -62,12 +61,9 @@ export const Link = styled(NextLink)`
 `;
 
 export const Title = styled.h3`
+	width: 100%;
+	margin-bottom: ${({ theme }) => theme.spacing(4)};
+
 	text-transform: uppercase;
 	text-align: center;
-	width: 100%;
-	padding-right: ${({ theme }) => theme.spacing(7.5)};
-
-	@media ${({ theme }) => theme.device.tablet} {
-		padding-right: ${({ theme }) => theme.spacing(6)};
-	}
 `;
