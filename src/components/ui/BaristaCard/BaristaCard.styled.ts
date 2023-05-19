@@ -7,7 +7,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	min-height: 370px;
+	min-height: 340px;
 	padding: ${({ theme }) => theme.spacing(7.5, 5, 9)};
 
 	cursor: default;
@@ -31,7 +31,8 @@ export const Quote = styled.p`
 	line-height: 1.8;
 
 	max-width: 90%;
-	margin: ${({ theme }) => theme.spacing(5, 0)};
+	margin-top: ${({ theme }) => theme.spacing(5)};
+	margin-bottom: auto;
 
 	@media ${({ theme }) => theme.device.mobileL} {
 		line-height: 1.4;
@@ -39,7 +40,7 @@ export const Quote = styled.p`
 `;
 
 export const Avatar = styled(Image)`
-	margin-top: auto;
+	margin-top: ${({ theme }) => theme.spacing(5)};
 	margin-bottom: ${({ theme }) => theme.spacing(3)};
 	border-radius: 50%;
 `;

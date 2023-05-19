@@ -1,5 +1,3 @@
-import { Name } from '@/interfaces';
-
 const wordsCapitalize = (str: string) =>
 	str
 		.replace(/\s+/g, ' ')
@@ -7,15 +5,14 @@ const wordsCapitalize = (str: string) =>
 		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(' ');
 
-export const getFullName = (name: Name): string => {
-	let { given: firstName, family: lastName } = name;
-
-	if (!firstName && !lastName) {
+export const getFullName = (fullName: string): string => {
+	if (!fullName) {
 		return '';
 	}
+	const [given, family] = fullName.trim().split(' ');
 
-	firstName = typeof firstName === 'string' ? wordsCapitalize(firstName) : '';
-	lastName = typeof lastName === 'string' ? wordsCapitalize(lastName) : '';
+	const firstName = wordsCapitalize(given);
+	const lastName = family ? wordsCapitalize(family) : '';
 
 	return `${firstName} ${lastName}`.trim();
 };

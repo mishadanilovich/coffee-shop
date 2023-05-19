@@ -4,8 +4,8 @@ import { BaristaCardProps } from './BaristaCard.interface';
 import * as Styled from './BaristaCard.styled';
 
 export const BaristaCard = ({ data }: BaristaCardProps) => {
-	const { quote, name, avatar } = data;
-	const baristaFullName = getFullName(name);
+	const { quote, fullName, avatar } = data;
+	const baristaFullName = getFullName(fullName);
 
 	return (
 		<Styled.Container>

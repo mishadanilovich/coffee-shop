@@ -1,8 +1,6 @@
-import { Name } from './Name.interface';
-
 export interface Barista {
 	id: string;
-	name: Name;
+	fullName: string;
 	avatar?: string;
 	quote?: string;
 }

@@ -1,7 +1,9 @@
 import { AboutUs, Baristas, Blogs, ContactUs, Intro, Lessons, Menu } from './sections';
-import { baristas, blogs, lessons, menu } from './mock';
+import { HomeProps } from './Home.interface';
 
-export const Home = () => (
+import { blogs, lessons, menu } from './mock';
+
+export const Home = ({ baristas }: HomeProps) => (
 	<>
 		<Intro />
 		<AboutUs />

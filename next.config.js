@@ -5,6 +5,9 @@ const nextConfig = {
       fileName: false
     }
   },
+  images: {
+    domains: ['imagedelivery.net']
+  },
   reactStrictMode: true
 }
 

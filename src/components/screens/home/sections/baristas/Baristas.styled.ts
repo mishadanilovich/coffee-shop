@@ -7,6 +7,6 @@ export const Container = styled.section`
 
 export const Content = styled.div`
 	width: 100%;
-	max-width: 840px;
+	max-width: 800px;
 	margin: 0 auto;
 `;
