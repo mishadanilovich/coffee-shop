@@ -1,10 +1,10 @@
-import { GetServerSidePropsContext } from 'next';
+import { GetServerSidePropsContext, NextPage } from 'next';
 import { Meta } from '@/components/seo';
 import { Auth } from '@/components/screens';
 import { checkAuth } from '@/components/utils';
 import { ROUTE } from '@/components/constants';
 
-const AuthPage = () => {
+const AuthPage: NextPage = () => {
 	return (
 		<Meta title="Authentication" description="Authentication">
 			<main>

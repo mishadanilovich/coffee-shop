@@ -11,9 +11,10 @@ export const checkAuth = async (ctx: GetServerSidePropsContext) => {
 	axios.defaults.headers.Authorization = 'Bearer ' + _token;
 
 	try {
-		await Services.auth.getMe();
+		const user = await Services.auth.getMe();
 
 		return {
+			user: user,
 			props: {}
 		};
 	} catch (err) {

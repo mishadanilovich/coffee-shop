@@ -27,7 +27,7 @@ export const DataPicker = ({
 	};
 
 	return (
-		<Styled.Container error={error}>
+		<Styled.Container>
 			{title && <Styled.Title>{title}</Styled.Title>}
 			<Styled.OptionsContainer error={error} className={className}>
 				{getOptions()}

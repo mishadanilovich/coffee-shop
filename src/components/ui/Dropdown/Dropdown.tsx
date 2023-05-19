@@ -21,6 +21,7 @@ export const Dropdown = ({ content, children }: DropdownProps) => {
 			align={{ offset: [0, 10] }}
 			trigger="click"
 			animation="slide-up"
+			placement="bottomRight"
 			overlay={dropdownContent}
 		>
 			{children}

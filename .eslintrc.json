@@ -37,6 +37,7 @@
                 "endOfLine": "auto"
             }
         ],
+        "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "arrow-spacing": "error",
         "brace-style": "off",

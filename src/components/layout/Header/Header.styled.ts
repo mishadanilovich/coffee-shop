@@ -66,6 +66,15 @@ export const Store = styled(StyledStore)`
 	${actionStyles};
 `;
 
+export const Username = styled.span`
+	${({ theme }) => theme.typography['16L']};
+	line-height: 1.6;
+`;
+
+export const AvatarContainer = styled.button`
+	line-height: 0;
+`;
+
 export const Avatar = styled(User)`
 	${actionStyles};
 `;
