@@ -1,6 +1,9 @@
 export interface User {
-	id: number;
+	id: string;
 	username: string;
 	email: string;
 	contactPhone?: string;
+	address?: string;
 }
+
+export type UpdateUser = Partial<User>;

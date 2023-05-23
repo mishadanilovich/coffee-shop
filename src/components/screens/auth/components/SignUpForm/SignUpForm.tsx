@@ -3,6 +3,7 @@ import { setCookie } from 'nookies';
 import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { RegisterFromData } from '@/interfaces';
 import { ROUTE } from '@/components/constants';
+import { removeEmptyFields } from '@/components/utils';
 
 import * as Services from '@/services';
 
@@ -19,7 +20,9 @@ export const SignUpForm = () => {
 
 	const onFormSubmit = async (data: RegisterFromData) => {
 		try {
-			const { token } = await Services.auth.register(data);
+			const { token } = await Services.auth.register(
+				removeEmptyFields<RegisterFromData>(data)
+			);
 
 			setCookie(null, '_token', token, {
 				path: '/'

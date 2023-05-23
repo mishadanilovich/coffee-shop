@@ -1,5 +1,6 @@
 export enum ROUTE {
 	HOME = '/',
 	MENU = '/menu',
-	AUTH = '/auth'
+	AUTH = '/auth',
+	BAD_PAGE = '/badpage'
 }

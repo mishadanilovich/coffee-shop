@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui';
+import Image from 'next/image';
+import { Link } from '@/components/ui';
 
-import { BLOG_CARD_BUTTON_LABEL } from './constants';
+import { BLOG_CARD_LINK_LABEL } from './constants';
 import { BlogCardProps } from './BlogCard.interface';
 import * as Styled from './BlogCard.styled';
-import Image from 'next/image';
 
 export const BlogCard = ({ data }: BlogCardProps) => {
-	const { title, description, img } = data;
+	const { title, description, img, blogUrl } = data;
 
 	return (
 		<Styled.Container>
@@ -16,7 +16,7 @@ export const BlogCard = ({ data }: BlogCardProps) => {
 			<Styled.Content>
 				<Styled.Title>{title}</Styled.Title>
 				{description && <Styled.Description>{description}</Styled.Description>}
-				<Button label={BLOG_CARD_BUTTON_LABEL} />
+				<Link href={blogUrl}>{BLOG_CARD_LINK_LABEL}</Link>
 			</Styled.Content>
 		</Styled.Container>
 	);

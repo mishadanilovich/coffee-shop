@@ -1,5 +1,5 @@
 import { InputFormField } from '@/components/ui';
-import { Email, Home, Phone, User } from '@/components/icons';
+import { Email, Home, Phone, User as UserIcon } from '@/components/icons';
 import { emailReg, phoneReg } from '@/components/constants';
 import { TitleTextUse } from '@/interfaces';
 
@@ -19,21 +19,21 @@ export const CONTACT_US_FORM_TITLE = 'Contact';
 export const CONTACT_US_SUBMIT_BUTTON = 'Contact us now';
 
 export const DEFAULT_VALUES = {
-	name: '',
+	username: '',
 	email: '',
 	address: '',
-	phone: ''
+	contactPhone: ''
 };
 
 export const CONTACT_US_FORM_FIELDS: InputFormField<ContactUsFormData>[] = [
 	{
-		id: 'name',
+		id: 'username',
 		type: 'text',
 		placeholder: 'Name',
 		options: {
 			required: 'Name is required'
 		},
-		leftIcon: User
+		leftIcon: UserIcon
 	},
 	{
 		id: 'email',
@@ -55,7 +55,7 @@ export const CONTACT_US_FORM_FIELDS: InputFormField<ContactUsFormData>[] = [
 		leftIcon: Home
 	},
 	{
-		id: 'phone',
+		id: 'contactPhone',
 		type: 'text',
 		placeholder: 'Contact number',
 		options: {

@@ -1,3 +1,12 @@
-import { DEFAULT_VALUES } from './constants';
+import { User } from '@/interfaces';
 
-export type ContactUsFormData = typeof DEFAULT_VALUES;
+export interface ContactUsFormData {
+	username: string;
+	email: string;
+	contactPhone: string;
+	address?: string;
+}
+
+export interface ContactUsProps {
+	user?: User;
+}

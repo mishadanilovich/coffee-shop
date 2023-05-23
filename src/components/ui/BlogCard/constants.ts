@@ -1,1 +1,1 @@
-export const BLOG_CARD_BUTTON_LABEL = 'More details';
+export const BLOG_CARD_LINK_LABEL = 'More details';

@@ -4,6 +4,6 @@ import * as Services from '@/services';
 
 export const useFetch = () => {
 	return {
-		GetUser: () => useSWRImmutable('/user', async () => await Services.auth.getMe())
+		GetUser: () => useSWRImmutable('/user', async () => await Services.users.getMe())
 	};
 };
