@@ -3,8 +3,6 @@ import { removeEmptyFields } from '@/components/utils';
 import { ANCHORS, COFFEE_SHOP_COORDS, ERROR_MESSAGE } from '@/components/constants';
 import { User } from '@/interfaces';
 
-import * as Services from '@/services';
-
 import {
 	CONTACT_US_FORM_FIELDS,
 	CONTACT_US_FORM_TITLE,
@@ -21,16 +19,9 @@ export const ContactUs = ({ user }: ContactUsProps) => {
 	const { id = undefined, ...userData } = user ? removeEmptyFields<User>(user) : {};
 
 	const onFormSubmit = async (data: ContactUsFormData) => {
+		console.log(data);
+
 		try {
-			const { address, contactPhone } = data;
-
-			if (
-				(address || contactPhone) &&
-				(user?.contactPhone === null || !user?.address === null)
-			) {
-				await Services.users.updateMe({ address, contactPhone });
-			}
-
 			Notification({
 				type: NotificationType.success,
 				message: SUCCESSFULLY_CONTACT_US

@@ -41,11 +41,12 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 	{
 		id: 'contactPhone',
 		type: 'text',
-		placeholder: 'Contact number',
+		placeholder: 'Contact phone',
 		options: {
+			required: 'Contact phone is required',
 			pattern: {
 				value: phoneReg,
-				message: 'Invalid phone number format (+375(33)333-33-33)'
+				message: 'Invalid phone format (+375(33)333-33-33)'
 			}
 		},
 		leftIcon: Phone
