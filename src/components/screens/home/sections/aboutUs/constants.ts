@@ -1,14 +1,4 @@
-import { TitleContent, TitleTextUse } from '@/interfaces';
-
-export const ABOUT_US_TITLE: TitleContent = [
-	{
-		text: 'About ',
-		use: TitleTextUse.main
-	},
-	{
-		text: 'Us'
-	}
-];
+export const ABOUT_US_TITLE = ';$About; us';
 
 export const ABOUT_US_CONTENT_TITLE = 'What is a cafe of a New Format?';
 export const ABOUT_US_CONTENT_TEXT =

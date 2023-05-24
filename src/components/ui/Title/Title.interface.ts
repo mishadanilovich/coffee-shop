@@ -1,5 +1,3 @@
-import { TitleContent } from '@/interfaces';
-
 export enum TitleType {
 	h1 = 'h1',
 	h2 = 'h2',
@@ -7,7 +5,7 @@ export enum TitleType {
 }
 
 export interface TitleProps {
-	content: TitleContent;
+	content: string;
 	type?: TitleType;
 	className?: string;
 }

@@ -1,19 +1,12 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Home, Phone, User as UserIcon } from '@/components/icons';
 import { emailReg, phoneReg } from '@/components/constants';
-import { TitleTextUse } from '@/interfaces';
 
 import { ContactUsFormData } from './ContactUs.interface';
 
-export const CONTACT_US_TITLE = [
-	{
-		text: 'Contact',
-		use: TitleTextUse.main
-	},
-	{
-		text: 'Us'
-	}
-];
+export const CONTACT_US_TITLE = ';$Contact; us';
+
+export const SUCCESSFULLY_CONTACT_US = 'The application was accepted, expect a call!';
 
 export const CONTACT_US_FORM_TITLE = 'Contact';
 export const CONTACT_US_SUBMIT_BUTTON = 'Contact us now';

@@ -1,2 +1,2 @@
 export * from './Title';
-export * from './Title.interface';
+export { TitleType } from './Title.interface';
