@@ -61,7 +61,10 @@ export const Form = <FormData extends FieldValues>({
 		});
 	};
 
-	const onFormSubmit = handleSubmit(data => onSubmit(data));
+	const onFormSubmit = handleSubmit(async data => {
+		await onSubmit(data);
+		reset(defaultValues);
+	});
 
 	return (
 		<Styled.Form onSubmit={onFormSubmit} className="form" rowSpacing={rowSpacing}>

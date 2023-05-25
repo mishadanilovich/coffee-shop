@@ -1,7 +1,9 @@
 import { Form, Map, Notification, NotificationType, Title, TitleType } from '@/components/ui';
 import { removeEmptyFields } from '@/components/utils';
 import { ANCHORS, COFFEE_SHOP_COORDS, ERROR_MESSAGE } from '@/components/constants';
-import { User } from '@/interfaces';
+import { ContactUsData, User } from '@/interfaces';
+
+import * as Services from '@/services';
 
 import {
 	CONTACT_US_FORM_FIELDS,
@@ -11,15 +13,15 @@ import {
 	DEFAULT_VALUES,
 	SUCCESSFULLY_CONTACT_US
 } from './constants';
-import { ContactUsFormData, ContactUsProps } from './ContactUs.interface';
+import { ContactUsProps } from './ContactUs.interface';
 
 import * as Styled from './ContactUs.styled';
 
 export const ContactUs = ({ user }: ContactUsProps) => {
 	const { id = undefined, ...userData } = user ? removeEmptyFields<User>(user) : {};
 
-	const onFormSubmit = async (data: ContactUsFormData) => {
-		console.log(data);
+	const onFormSubmit = async (data: ContactUsData) => {
+		await Services.contactUs.sendEmail(data);
 
 		try {
 			Notification({
