@@ -1,11 +1,6 @@
 import { destroyCookie } from 'nookies';
 import axios from '@/core/axios';
-import {
-	LoginFormData,
-	LoginResponseData,
-	RegisterFromData,
-	RegisterResponseData
-} from '@/interfaces';
+import { LoginFormData, LoginResponseData, RegisterFromData, RegisterResponseData } from '@/types';
 
 export const login = async (values: LoginFormData): Promise<LoginResponseData> => {
 	return (await axios.post('/auth/login', values)).data;

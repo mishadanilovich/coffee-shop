@@ -1,4 +1,4 @@
-import { Blog } from '@/interfaces';
+import { Blog } from '@/types';
 
 export interface BlogCardProps {
 	data: Omit<Blog, 'id'>;

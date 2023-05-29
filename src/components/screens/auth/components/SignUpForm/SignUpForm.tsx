@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation';
 import { setCookie } from 'nookies';
 import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
-import { RegisterFromData } from '@/interfaces';
+import { RegisterFromData } from '@/types';
 import { ROUTE } from '@/components/constants';
 import { removeEmptyFields } from '@/components/utils';
 

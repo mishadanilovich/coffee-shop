@@ -1,4 +1,4 @@
-import { MenuItem } from '@/interfaces';
+import { MenuItem } from '@/types';
 
 export interface BasketItem extends MenuItem {
 	count: number;

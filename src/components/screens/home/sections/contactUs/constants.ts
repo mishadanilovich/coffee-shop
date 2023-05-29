@@ -1,7 +1,7 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Phone, User as UserIcon } from '@/components/icons';
 import { emailReg, phoneReg } from '@/components/constants';
-import { ContactUsData } from '@/interfaces';
+import { ContactUsData } from '@/types';
 
 export const CONTACT_US_TITLE = ';$Contact; us';
 

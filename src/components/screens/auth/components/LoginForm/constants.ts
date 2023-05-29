@@ -1,7 +1,7 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Lock } from '@/components/icons';
 import { emailReg } from '@/components/constants';
-import { LoginFormData } from '@/interfaces';
+import { LoginFormData } from '@/types';
 
 export const LOGIN_SUBMIT_BUTTON = 'Log in';
 

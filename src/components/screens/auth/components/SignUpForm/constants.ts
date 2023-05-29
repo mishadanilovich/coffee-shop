@@ -1,7 +1,7 @@
 import { InputFormField } from '@/components/ui';
 import { Email, Lock, Phone, User } from '@/components/icons';
 import { emailReg, phoneReg } from '@/components/constants';
-import { RegisterFromData } from '@/interfaces';
+import { RegisterFromData } from '@/types';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 

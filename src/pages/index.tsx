@@ -1,12 +1,12 @@
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { SWRConfig } from 'swr';
+import { CategoryType, User } from '@/types';
 import { Home, HomeProps } from '@/components/screens';
 import { Layout } from '@/components/layout';
 import { checkAuth } from '@/components/utils';
-import { User } from '@/interfaces';
+import { ROUTE } from '@/components/constants';
 
 import * as Services from '@/services';
-import { ROUTE } from '@/components/constants';
 
 interface HomePageProps extends HomeProps {
 	fallback?: { [key: string]: User };
@@ -33,6 +33,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 	}
 
 	try {
+		const { menu } = await Services.menu.getCategory(CategoryType.coffee);
 		const baristas = await Services.home.getBaristas();
 		const lessons = await Services.home.getLessons();
 		const blogs = await Services.home.getBlogs();
@@ -42,6 +43,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 				fallback: {
 					'/user': authProps.user
 				},
+				menu,
 				baristas,
 				lessons,
 				blogs

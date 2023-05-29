@@ -1,4 +1,4 @@
-import { Barista } from '@/interfaces';
+import { Barista } from '@/types';
 
 export interface BaristasProps {
 	baristas: Barista[];

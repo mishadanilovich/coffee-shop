@@ -1,4 +1,4 @@
-import { Lesson } from '@/interfaces';
+import { Lesson } from '@/types';
 
 export interface LessonCardProps {
 	data: Omit<Lesson, 'id'>;

@@ -1,4 +1,4 @@
-import { Blog, Lesson } from '@/interfaces';
+import { Blog, Lesson } from '@/types';
 
 export const menu = [
 	{
@@ -20,8 +20,7 @@ export const menu = [
 		title: 'Flat white',
 		image: '/menu-3.png',
 		description: 'Espresso 2X, milk.',
-		price: 5.5,
-		count: 8
+		price: 5.5
 	},
 	{
 		id: '4',

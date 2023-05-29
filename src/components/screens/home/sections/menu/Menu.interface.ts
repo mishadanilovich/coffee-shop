@@ -1,4 +1,4 @@
-import { MenuItem } from '@/interfaces';
+import { MenuItem } from '@/types';
 
 export interface MenuProps {
 	menu: MenuItem[];

@@ -1,4 +1,4 @@
-import { Basket } from '@/interfaces';
+import { Basket } from '@/types';
 
 export interface BasketModalProps {
 	isOpen: boolean;

@@ -6,3 +6,4 @@ export * from './Basket.interface';
 export * from './Auth.interface';
 export * from './User.interface';
 export * from './ContactUs.interface';
+export * from './Category.interface';

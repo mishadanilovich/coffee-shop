@@ -1,5 +1,5 @@
 import axios from '@/core/axios';
-import { Barista, Blog, Lesson } from '@/interfaces';
+import { Barista, Blog, Lesson } from '@/types';
 
 export const getBaristas = async (): Promise<Barista[]> => {
 	return (await axios.get('/baristas')).data;

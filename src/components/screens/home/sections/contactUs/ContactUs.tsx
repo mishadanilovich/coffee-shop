@@ -1,7 +1,7 @@
 import { Form, Map, Notification, NotificationType, Title, TitleType } from '@/components/ui';
 import { removeEmptyFields } from '@/components/utils';
 import { ANCHORS, COFFEE_SHOP_COORDS, ERROR_MESSAGE } from '@/components/constants';
-import { ContactUsData, User } from '@/interfaces';
+import { ContactUsData, User } from '@/types';
 
 import * as Services from '@/services';
 

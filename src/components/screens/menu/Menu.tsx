@@ -1,13 +1,14 @@
 import { MenuCard } from '@/components/ui';
 
-import { menu } from './mock';
+import { MenuProps } from './Menu.interface';
+
 import * as Styled from './Menu.styled';
 
-export const Menu = () => {
+export const Menu = ({ menu }: MenuProps) => {
 	const getContent = () => {
-		return menu.map(({ title, items }, index) => (
-			<Styled.Menu key={index}>
-				<Styled.Title>{title}</Styled.Title>
+		return menu.map(({ id, name, menu: items }) => (
+			<Styled.Menu key={id}>
+				<Styled.Title>{name}</Styled.Title>
 				<Styled.MenuList>
 					{items.map(menuItem => (
 						<MenuCard key={menuItem.id} data={menuItem} />

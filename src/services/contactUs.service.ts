@@ -1,4 +1,4 @@
-import { ContactUsData } from '@/interfaces';
+import { ContactUsData } from '@/types';
 import axios from '@/core/axios';
 
 export const sendEmail = async (values: ContactUsData) => {

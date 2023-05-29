@@ -1,4 +1,4 @@
-import { BasketItem } from '@/interfaces';
+import { BasketItem } from '@/types';
 
 export interface BasketItemCardProps {
 	data: BasketItem;
