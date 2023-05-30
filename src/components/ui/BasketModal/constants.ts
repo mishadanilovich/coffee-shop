@@ -11,8 +11,8 @@ export const ORDER_DETAILS_FORM_TITLE = 'Details';
 export const ORDER_DETAILS_SUBMIT_BUTTON = 'Order now';
 
 export const DEFAULT_VALUES = {
-	name: '',
-	phone: '',
+	username: '',
+	contactPhone: '',
 	deliveryMethod: 'inStore',
 	paymentMethod: 'cash'
 };
@@ -20,7 +20,7 @@ export const DEFAULT_VALUES = {
 const phoneReg = new RegExp('^\\+375\\((17|29|33|44)\\)[0-9]{3}-[0-9]{2}-[0-9]{2}$');
 export const ORDER_DETAILS_FORM_FIELDS: FormField<OrderDetailsFormData>[] = [
 	{
-		id: 'name',
+		id: 'username',
 		type: 'text',
 		placeholder: 'Name',
 		options: {
@@ -29,7 +29,7 @@ export const ORDER_DETAILS_FORM_FIELDS: FormField<OrderDetailsFormData>[] = [
 		leftIcon: User
 	},
 	{
-		id: 'phone',
+		id: 'contactPhone',
 		type: 'tel',
 		placeholder: 'Contact number',
 		options: {

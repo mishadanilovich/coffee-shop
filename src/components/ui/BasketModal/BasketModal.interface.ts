@@ -7,8 +7,8 @@ export interface BasketModalProps {
 }
 
 export interface OrderDetailsFormData {
-	name: string;
-	phone: string;
-	deliveryMethod: string | null;
-	paymentMethod: string | null;
+	username: string;
+	contactPhone: string;
+	deliveryMethod: string;
+	paymentMethod: string;
 }
