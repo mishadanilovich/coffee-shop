@@ -1,24 +1,37 @@
 import { useEffect } from 'react';
-import { Form, FormTheme, ReactPortal, BasketItemCard } from '@/components/ui';
-import { CURRENCY } from '@/components/constants';
+import {
+	Form,
+	FormTheme,
+	ReactPortal,
+	BasketItemCard,
+	Notification,
+	NotificationType
+} from '@/components/ui';
+import { CURRENCY, ERROR_MESSAGE } from '@/components/constants';
 import { Cup } from '@/components/icons';
+import { useFetch } from '@/components/hooks';
+import { Basket } from '@/types';
+
+import * as Services from '@/services';
 
 import {
 	BASKET_TITLE,
 	BASKET_TOTAL_PRICE_LABEL,
 	DEFAULT_VALUES,
 	EMPTY_BASKET,
+	EMPTY_BASKET_ERROR,
 	ORDER_DETAILS_FORM_FIELDS,
 	ORDER_DETAILS_FORM_TITLE,
-	ORDER_DETAILS_SUBMIT_BUTTON
+	ORDER_DETAILS_SUBMIT_BUTTON,
+	SUCCESSFUL_BASKET_SUBMIT
 } from './constants';
-import { BasketModalProps, OrderDetailsFormData } from './BasketModal.interface';
+import { BasketModalProps } from './BasketModal.interface';
+
 import * as Styled from './BasketModal.styled';
 
-export const BasketModal = ({ isOpen, data: basketData, handleClose }: BasketModalProps) => {
-	const onFormSubmit = (data: OrderDetailsFormData) => {
-		console.log({ ...data, ...basketData });
-	};
+export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
+	const { GetBasket } = useFetch();
+	const { data: basketData, mutate: mutateBasket } = GetBasket();
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden';
@@ -28,9 +41,48 @@ export const BasketModal = ({ isOpen, data: basketData, handleClose }: BasketMod
 		};
 	}, [isOpen]);
 
-	if (!isOpen) return null;
+	if (!isOpen || !basketData) return null;
 
 	const { items: basketItems, totalPrice } = basketData;
+
+	const handleIncrease = async (basketId: string, menuItemId: string) => {
+		await Services.basket.addBasketItem({ basketId, menuItemId });
+
+		await mutateBasket();
+	};
+	const handleDecrease = async (basketId: string, menuItemId: string) => {
+		await Services.basket.removeBasketItem({ basketId, menuItemId });
+
+		await mutateBasket();
+	};
+
+	const handleSubmit = async (data: Omit<Basket, 'id'>) => {
+		if (!basketData?.items?.length) {
+			return Notification({
+				type: NotificationType.failure,
+				message: EMPTY_BASKET_ERROR
+			});
+		}
+
+		try {
+			await Services.basket.submit({ ...data, id: basketData.id });
+
+			Notification({
+				type: NotificationType.success,
+				message: SUCCESSFUL_BASKET_SUBMIT
+			});
+
+			await mutateBasket();
+
+			handleClose();
+		} catch (err) {
+			Notification({
+				type: NotificationType.failure,
+				message: ERROR_MESSAGE
+			});
+		}
+	};
+
 	return (
 		<ReactPortal wrapperId="basket-react-portal">
 			<>
@@ -42,14 +94,14 @@ export const BasketModal = ({ isOpen, data: basketData, handleClose }: BasketMod
 						<Styled.Cross onClick={handleClose} />
 					</Styled.TitleContainer>
 					<Styled.Content>
-						<Styled.Basket empty={!basketItems.length}>
-							{basketItems.length ? (
+						<Styled.Basket empty={!basketItems?.length}>
+							{!!basketItems?.length ? (
 								basketItems.map((item, index) => (
 									<BasketItemCard
 										key={index}
 										data={item}
-										handleDecrease={() => {}}
-										handleIncrease={() => {}}
+										handleDecrease={handleDecrease}
+										handleIncrease={handleIncrease}
 									/>
 								))
 							) : (
@@ -65,7 +117,8 @@ export const BasketModal = ({ isOpen, data: basketData, handleClose }: BasketMod
 								fields={ORDER_DETAILS_FORM_FIELDS}
 								submitButtonLabel={ORDER_DETAILS_SUBMIT_BUTTON}
 								defaultValues={DEFAULT_VALUES}
-								onSubmit={onFormSubmit}
+								onSubmit={handleSubmit}
+								isResetToDefault={false}
 							/>
 						</Styled.OrderDetails>
 					</Styled.Content>

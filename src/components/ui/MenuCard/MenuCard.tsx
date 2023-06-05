@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui';
 import { CURRENCY } from '@/components/constants';
+
 import { MenuCardProps } from './MenuCard.interface';
 import { BUTTON_LABEL } from './constants';
 
 import * as Styled from './MenuCard.styled';
 
-export const MenuCard = ({ data }: MenuCardProps) => {
-	const { image, title, description, price } = data;
+export const MenuCard = ({ data, handleAddButton }: MenuCardProps) => {
+	const { id, image, title, description, price } = data;
 
 	return (
 		<Styled.Card>
@@ -14,7 +15,7 @@ export const MenuCard = ({ data }: MenuCardProps) => {
 			<Styled.Title>{title}</Styled.Title>
 			{description && <Styled.Description>{description}</Styled.Description>}
 			<Styled.BottomContainer>
-				<Button label={BUTTON_LABEL} />
+				<Button label={BUTTON_LABEL} onClick={() => handleAddButton(id)} />
 				<Styled.Price>{`${price} ${CURRENCY}`}</Styled.Price>
 			</Styled.BottomContainer>
 		</Styled.Card>

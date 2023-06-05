@@ -31,4 +31,5 @@ export interface FormProps<FormData extends FieldValues> {
 	defaultValues: FormData;
 	rowSpacing?: number;
 	theme?: FormTheme;
+	isResetToDefault?: boolean;
 }

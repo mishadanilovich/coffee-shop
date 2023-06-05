@@ -5,7 +5,13 @@ import { BasketItemCardProps } from './BasketItemCard.interface';
 import * as Styled from './BasketItemCard.styled';
 
 export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketItemCardProps) => {
-	const { count, price, image, title, description, id } = data;
+	const {
+		count,
+		menuItem: { image, title, description },
+		basketId,
+		menuItemId,
+		price
+	} = data;
 
 	return (
 		<Styled.Container>
@@ -14,11 +20,11 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 				<Styled.Title>{title}</Styled.Title>
 				{description && <Styled.Description>{description}</Styled.Description>}
 				<Styled.ActionsContainer>
-					<Styled.ActionsButton onClick={() => handleDecrease(id)}>
+					<Styled.ActionsButton onClick={() => handleDecrease(basketId, menuItemId)}>
 						<Minus height={18} width={18} />
 					</Styled.ActionsButton>
 					<span>{count}</span>
-					<Styled.ActionsButton onClick={() => handleIncrease(id)}>
+					<Styled.ActionsButton onClick={() => handleIncrease(basketId, menuItemId)}>
 						<Plus height={18} width={18} />
 					</Styled.ActionsButton>
 					<Styled.Price>{`${price} ${CURRENCY}`}</Styled.Price>

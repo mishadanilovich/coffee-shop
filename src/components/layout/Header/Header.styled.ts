@@ -62,6 +62,22 @@ const actionStyles = css`
 	}
 `;
 
+export const StoreContainer = styled.div`
+	display: flex;
+	position: relative;
+`;
+
+export const Counter = styled.span`
+	${({ theme }) => theme.typography['13L']};
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: ${({ theme }) => theme.palette.red};
+`;
+
 export const Store = styled(StyledStore)`
 	${actionStyles};
 `;

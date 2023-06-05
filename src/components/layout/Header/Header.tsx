@@ -12,10 +12,11 @@ export const Header = () => {
 	const router = useRouter();
 	const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);
 
-	const { GetUser } = useFetch();
+	const { GetUser, GetBasket } = useFetch();
 	const { data: userData } = GetUser();
+	const { data: basketData } = GetBasket();
 
-	const onClickLogout = async () => {
+	const onClickLogout = () => {
 		Services.auth.logout();
 		router.push(ROUTE.AUTH);
 	};
@@ -31,15 +32,14 @@ export const Header = () => {
 						<Styled.Avatar />
 					</Styled.AvatarContainer>
 				</Dropdown>
-				<Styled.Store onClick={() => setIsStoreModalOpen(!isStoreModalOpen)} />
+				<Styled.StoreContainer>
+					{!!basketData?.items?.length && <Styled.Counter />}
+					<Styled.Store onClick={() => setIsStoreModalOpen(!isStoreModalOpen)} />
+				</Styled.StoreContainer>
 			</Styled.Actions>
 			{isStoreModalOpen && (
 				<BasketModal
 					isOpen={isStoreModalOpen}
-					data={{
-						items: [],
-						totalPrice: 0
-					}}
 					handleClose={() => setIsStoreModalOpen(false)}
 				/>
 			)}

@@ -1,10 +1,19 @@
 import { MenuItem } from '@/types';
 
-export interface BasketItem extends MenuItem {
+export interface BasketItem {
+	basketId: string;
+	menuItemId: string;
+	menuItem: MenuItem;
+	price: number;
 	count: number;
 }
 
 export interface Basket {
-	totalPrice: number;
-	items: BasketItem[];
+	id: string;
+	username?: string;
+	contactPhone?: string;
+	deliveryMethod?: string;
+	paymentMethod?: string;
+	totalPrice?: number;
+	items?: BasketItem[];
 }

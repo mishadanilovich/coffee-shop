@@ -12,7 +12,8 @@ export const Form = <FormData extends FieldValues>({
 	onSubmit,
 	defaultValues,
 	rowSpacing = 4,
-	theme = FormTheme.white
+	theme = FormTheme.white,
+	isResetToDefault = true
 }: FormProps<FormData>) => {
 	const {
 		control,
@@ -63,7 +64,7 @@ export const Form = <FormData extends FieldValues>({
 
 	const onFormSubmit = handleSubmit(async data => {
 		await onSubmit(data);
-		reset(defaultValues);
+		if (isResetToDefault) reset(defaultValues);
 	});
 
 	return (

@@ -34,6 +34,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
 	try {
 		const { menu } = await Services.menu.getCategory(CategoryType.coffee);
+		const basket = await Services.basket.getCurrent();
 		const baristas = await Services.home.getBaristas();
 		const lessons = await Services.home.getLessons();
 		const blogs = await Services.home.getBlogs();
@@ -41,7 +42,8 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 		return {
 			props: {
 				fallback: {
-					'/user': authProps.user
+					'/user': authProps.user,
+					'/basket': basket
 				},
 				menu,
 				baristas,

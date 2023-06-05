@@ -32,11 +32,13 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
 	try {
 		const menu = await Services.menu.getMenu();
+		const basket = await Services.basket.getCurrent();
 
 		return {
 			props: {
 				fallback: {
-					'/user': authProps.user
+					'/user': authProps.user,
+					'/basket': basket
 				},
 				menu
 			}

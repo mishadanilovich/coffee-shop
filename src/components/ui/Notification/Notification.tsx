@@ -8,7 +8,6 @@ export const Notification = ({ type, message }: NotificationProps) => {
 		width: '250px',
 		borderRadius: '10px',
 		fontFamily: 'Roboto',
-		timeout: 2500,
 		pauseOnHover: true,
 		showOnlyTheLastOne: true
 	});
