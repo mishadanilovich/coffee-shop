@@ -7,10 +7,9 @@ import * as Styled from './BasketItemCard.styled';
 export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketItemCardProps) => {
 	const {
 		count,
-		menuItem: { image, title, description },
+		menuItem: { price, image, title, description },
 		basketId,
-		menuItemId,
-		price
+		menuItemId
 	} = data;
 
 	return (

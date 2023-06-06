@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
 	Form,
 	FormTheme,
@@ -41,9 +41,14 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 		};
 	}, [isOpen]);
 
-	if (!isOpen || !basketData) return null;
+	const { items: basketItems } = basketData || {};
 
-	const { items: basketItems, totalPrice } = basketData;
+	const totalPrice = useMemo(
+		() => basketItems?.reduce((acc, item) => acc + item.menuItem.price * item.count, 0),
+		[basketItems]
+	);
+
+	if (!isOpen || !basketData) return null;
 
 	const handleIncrease = async (basketId: string, menuItemId: string) => {
 		await Services.basket.addBasketItem({ basketId, menuItemId });
@@ -90,7 +95,9 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 				<Styled.Modal>
 					<Styled.TitleContainer>
 						<Styled.Title>{BASKET_TITLE}</Styled.Title>
-						<Styled.TotalPrice>{`${BASKET_TOTAL_PRICE_LABEL} ${totalPrice} ${CURRENCY}`}</Styled.TotalPrice>
+						<Styled.TotalPrice>{`${BASKET_TOTAL_PRICE_LABEL} ${totalPrice?.toFixed(
+							2
+						)} ${CURRENCY}`}</Styled.TotalPrice>
 						<Styled.Cross onClick={handleClose} />
 					</Styled.TitleContainer>
 					<Styled.Content>
