@@ -44,7 +44,7 @@ export const BasketModal = ({ isOpen, handleClose }: BasketModalProps) => {
 	const { items: basketItems } = basketData || {};
 
 	const totalPrice = useMemo(
-		() => basketItems?.reduce((acc, item) => acc + item.menuItem.price * item.count, 0),
+		() => basketItems?.reduce((acc, item) => acc + item.menuItem.price * item.count, 0) ?? 0,
 		[basketItems]
 	);
 

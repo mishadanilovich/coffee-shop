@@ -1,16 +1,28 @@
-import { Minus, Plus } from '@/components/icons';
+import { useState } from 'react';
+import { Loader, Minus, Plus } from '@/components/icons';
 import { CURRENCY } from '@/components/constants';
 
 import { BasketItemCardProps } from './BasketItemCard.interface';
+
 import * as Styled from './BasketItemCard.styled';
 
 export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketItemCardProps) => {
+	const [isLoading, setIsLoading] = useState(false);
+
 	const {
 		count,
 		menuItem: { price, image, title, description },
 		basketId,
 		menuItemId
 	} = data;
+
+	const handleIncreaseButton = async (
+		onClick: BasketItemCardProps['handleIncrease'] | BasketItemCardProps['handleDecrease']
+	) => {
+		setIsLoading(true);
+		await onClick(basketId, menuItemId);
+		setIsLoading(false);
+	};
 
 	return (
 		<Styled.Container>
@@ -19,11 +31,17 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 				<Styled.Title>{title}</Styled.Title>
 				{description && <Styled.Description>{description}</Styled.Description>}
 				<Styled.ActionsContainer>
-					<Styled.ActionsButton onClick={() => handleDecrease(basketId, menuItemId)}>
+					<Styled.ActionsButton
+						disabled={isLoading}
+						onClick={() => handleIncreaseButton(handleDecrease)}
+					>
 						<Minus height={18} width={18} />
 					</Styled.ActionsButton>
-					<span>{count}</span>
-					<Styled.ActionsButton onClick={() => handleIncrease(basketId, menuItemId)}>
+					{isLoading ? <Loader height={22} width={22} /> : <span>{count}</span>}
+					<Styled.ActionsButton
+						disabled={isLoading}
+						onClick={() => handleIncreaseButton(handleIncrease)}
+					>
 						<Plus height={18} width={18} />
 					</Styled.ActionsButton>
 					<Styled.Price>{`${price} ${CURRENCY}`}</Styled.Price>

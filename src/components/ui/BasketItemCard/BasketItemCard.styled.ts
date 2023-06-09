@@ -71,6 +71,10 @@ export const ActionsButton = styled.button`
 		}
 	}
 
+	&:disabled {
+		opacity: 0.7;
+	}
+
 	@media ${({ theme }) => theme.device.mobileL} {
 		& > svg {
 			height: 16px;
