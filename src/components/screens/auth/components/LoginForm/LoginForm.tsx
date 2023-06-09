@@ -25,12 +25,12 @@ export const LoginForm = () => {
 				path: '/'
 			});
 
+			router.push(ROUTE.HOME);
+
 			Notification({
 				type: NotificationType.success,
 				message: SUCCESSFUL_LOGIN
 			});
-
-			router.push(ROUTE.HOME);
 		} catch (err) {
 			Notification({
 				type: NotificationType.failure,

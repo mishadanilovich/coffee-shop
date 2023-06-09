@@ -5,5 +5,6 @@ export const zIndex = {
 	modalOverflow: 145,
 	modal: 150,
 	dropdown: 200,
-	confirmDialog: 300
+	confirmDialog: 300,
+	pageLoader: 350
 };
