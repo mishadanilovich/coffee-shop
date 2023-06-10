@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import { Basket as StyledStore, User } from '@/components/icons';
-import { Navigation as StyledNavigation } from '@/components/ui';
+import {
+	MobileNavigation as StyledMobileNavigation,
+	Navigation as StyledNavigation
+} from '@/components/ui';
 
 export const Header = styled.header`
 	position: sticky;
@@ -60,6 +63,11 @@ const actionStyles = css`
 	&:hover {
 		color: ${({ theme }) => theme.palette.beige};
 	}
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		width: 22px;
+		height: 22px;
+	}
 `;
 
 export const StoreContainer = styled.div`
@@ -76,6 +84,11 @@ export const Counter = styled.span`
 	height: 10px;
 	border-radius: 50%;
 	background: ${({ theme }) => theme.palette.red};
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		width: 8px;
+		height: 8px;
+	}
 `;
 
 export const Store = styled(StyledStore)`
@@ -93,4 +106,13 @@ export const AvatarContainer = styled.button`
 
 export const Avatar = styled(User)`
 	${actionStyles};
+`;
+
+export const MobileNavigation = styled(StyledMobileNavigation)`
+	display: none;
+	${actionStyles};
+
+	@media ${({ theme }) => theme.device.tablet} {
+		display: block;
+	}
 `;

@@ -38,3 +38,38 @@ export const NavLink = styled(Link)`
 export const NavSpan = styled.span`
 	${navStyles};
 `;
+
+export const ModalOverflow = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: ${({ theme }) => theme.zIndex.modalOverflow};
+
+	width: 100vw;
+	height: 100vh;
+`;
+
+export const Modal = styled.div`
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: ${({ theme }) => theme.zIndex.modal};
+
+	display: flex;
+	flex-direction: column;
+	row-gap: ${({ theme }) => theme.spacing(2)};
+	height: calc(100vh - 100px);
+	width: 100%;
+	max-width: 200px;
+	background: ${({ theme }) => theme.palette.white};
+	border-radius: 10px 0 0 10px;
+	padding: ${({ theme }) => theme.spacing(3, 5)};
+
+	color: ${({ theme }) => theme.palette.lightBlack};
+
+	box-shadow: -30px 0 40px -8px ${({ theme }) => theme.palette.black};
+
+	@media ${({ theme }) => theme.device.laptop} {
+		height: calc(100vh - 85px);
+	}
+`;

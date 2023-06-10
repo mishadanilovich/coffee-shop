@@ -7,6 +7,7 @@ export const Card = styled.div`
 	padding: ${({ theme }) => theme.spacing(8)};
 
 	transition: all 0.3s linear;
+
 	&:hover {
 		color: ${({ theme }) => theme.palette.black};
 		background: ${({ theme }) => theme.palette.lightBeige};
@@ -53,4 +54,8 @@ export const BottomContainer = styled.div`
 
 export const Price = styled.span`
 	${({ theme }) => theme.typography['25R']};
+
+	@media ${({ theme }) => theme.device.mobileL} {
+		${({ theme }) => theme.typography['20R']};
+	}
 `;

@@ -36,6 +36,7 @@ export const Header = () => {
 					{!!basketData?.items?.length && <Styled.Counter />}
 					<Styled.Store onClick={() => setIsStoreModalOpen(!isStoreModalOpen)} />
 				</Styled.StoreContainer>
+				<Styled.MobileNavigation navItems={NAV_ITEMS} />
 			</Styled.Actions>
 			{isStoreModalOpen && (
 				<BasketModal
