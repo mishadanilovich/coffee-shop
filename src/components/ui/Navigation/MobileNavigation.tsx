@@ -9,12 +9,12 @@ import * as Styled from './Navigation.styled';
 export const MobileNavigation = ({ navItems, className }: NavigationProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const handleClose = () => setIsOpen(prevState => !prevState);
+	const handleToggle = () => setIsOpen(prevState => !prevState);
 
 	const NavItem = ({ href, label, onClick, ...rest }: NavItem) => {
 		const handleNavClick = () => {
 			onClick?.();
-			handleClose();
+			handleToggle();
 		};
 
 		return href ? (
@@ -30,16 +30,17 @@ export const MobileNavigation = ({ navItems, className }: NavigationProps) => {
 
 	return (
 		<>
-			<Menu className={className} onClick={handleClose} />
+			<Menu className={className} onClick={handleToggle} />
 			{isOpen && (
 				<ReactPortal wrapperId="mobile-menu-react-portal">
 					<>
-						<Styled.ModalOverflow onClick={handleClose} />
-						<Styled.Modal>
-							{navItems.map(item => {
-								return <NavItem key={item.label} {...item} />;
-							})}
-						</Styled.Modal>
+						<Styled.ModalOverflow onClick={handleToggle}>
+							<Styled.Modal onClick={event => event.stopPropagation()}>
+								{navItems.map(item => {
+									return <NavItem key={item.label} {...item} />;
+								})}
+							</Styled.Modal>
+						</Styled.ModalOverflow>
 					</>
 				</ReactPortal>
 			)}

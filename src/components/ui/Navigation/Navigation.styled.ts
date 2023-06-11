@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Navigation = styled.nav`
 	${({ theme }) => theme.classes.contentCenter};
@@ -40,18 +40,28 @@ export const NavSpan = styled.span`
 `;
 
 export const ModalOverflow = styled.div`
+	width: 100vw;
+	height: 100vh;
+
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: ${({ theme }) => theme.zIndex.modalOverflow};
 
-	width: 100vw;
-	height: 100vh;
+	overflow: hidden;
+`;
+
+const openAnimation = keyframes`
+	from {
+	  right: -100%;
+	}
+  	to {
+	  right: 0;
+	}
 `;
 
 export const Modal = styled.div`
 	position: fixed;
-	right: 0;
 	bottom: 0;
 	z-index: ${({ theme }) => theme.zIndex.modal};
 
@@ -67,7 +77,11 @@ export const Modal = styled.div`
 
 	color: ${({ theme }) => theme.palette.lightBlack};
 
-	box-shadow: -30px 0 40px -8px ${({ theme }) => theme.palette.black};
+	box-shadow: -10px 0 20px -8px ${({ theme }) => theme.palette.black};
+
+	animation-name: ${openAnimation};
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
 
 	@media ${({ theme }) => theme.device.laptop} {
 		height: calc(100vh - 85px);
