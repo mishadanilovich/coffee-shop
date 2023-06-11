@@ -33,7 +33,7 @@ export const MenuImage = styled(Image)`
 	}
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h4`
 	text-transform: uppercase;
 	margin-top: ${({ theme }) => theme.spacing(3)};
 	margin-bottom: ${({ theme }) => theme.spacing(2)};
@@ -53,9 +53,5 @@ export const BottomContainer = styled.div`
 `;
 
 export const Price = styled.span`
-	${({ theme }) => theme.typography['25R']};
-
-	@media ${({ theme }) => theme.device.mobileL} {
-		${({ theme }) => theme.typography['20R']};
-	}
+	${({ theme }) => theme.typography['20R']};
 `;

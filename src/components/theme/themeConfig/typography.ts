@@ -44,6 +44,11 @@ export const typography: { [key: string]: StyledCSS } = {
 		font-weight: 400;
 		line-height: 1.6;
 	`,
+	'22R': css`
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 1.6;
+	`,
 	'25R': css`
 		font-size: 25px;
 		font-weight: 400;

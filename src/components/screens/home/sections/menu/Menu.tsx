@@ -20,10 +20,13 @@ export const Menu = ({ menu }: MenuProps) => {
 		await mutateBasket();
 	};
 
+	// Fix using pagination
 	const getContent = () => {
-		return menu.map((item, index) => (
-			<MenuCard key={index} data={item} handleAddButton={handleAddMenuButton} />
-		));
+		return menu
+			.slice(0, 10)
+			.map((item, index) => (
+				<MenuCard key={index} data={item} handleAddButton={handleAddMenuButton} />
+			));
 	};
 
 	return (
