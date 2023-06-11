@@ -20,7 +20,7 @@ export const Menu = ({ menu }: MenuProps) => {
 		await mutateBasket();
 	};
 
-	// Fix using pagination
+	//todo Fix using pagination
 	const getContent = () => {
 		return menu
 			.slice(0, 10)
