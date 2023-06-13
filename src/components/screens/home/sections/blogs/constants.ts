@@ -1,1 +1,1 @@
-export const BLOGS_TITLE = 'Our ;$blogs;';
+export const BLOGS_TITLE = 'Наши ;$блоги;';

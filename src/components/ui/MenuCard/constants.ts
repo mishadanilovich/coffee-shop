@@ -1,1 +1,1 @@
-export const BUTTON_LABEL = 'Add to Cart';
+export const BUTTON_LABEL = 'В корзину';

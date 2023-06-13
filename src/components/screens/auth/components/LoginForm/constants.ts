@@ -3,10 +3,10 @@ import { Email, Lock } from '@/components/icons';
 import { emailReg } from '@/components/constants';
 import { LoginFormData } from '@/types';
 
-export const LOGIN_SUBMIT_BUTTON = 'Log in';
+export const LOGIN_SUBMIT_BUTTON = 'Войти';
 
-export const SUCCESSFUL_LOGIN = 'Authorization is successful!';
-export const INVALID_LOGIN = 'Email or password is wrong!';
+export const SUCCESSFUL_LOGIN = 'Вы успешно авторизованы!';
+export const INVALID_LOGIN = 'Email или пароль неверный!';
 
 export const DEFAULT_VALUES = {
 	email: '',
@@ -19,10 +19,10 @@ export const LOGIN_FORM_FIELDS: InputFormField<LoginFormData>[] = [
 		type: 'text',
 		placeholder: 'E-mail',
 		options: {
-			required: 'Email address is required',
+			required: 'Email обязательный',
 			pattern: {
 				value: emailReg,
-				message: 'Invalid email address'
+				message: 'Неверный email'
 			}
 		},
 		leftIcon: Email
@@ -30,9 +30,9 @@ export const LOGIN_FORM_FIELDS: InputFormField<LoginFormData>[] = [
 	{
 		id: 'password',
 		type: 'password',
-		placeholder: 'Password',
+		placeholder: 'Пароль',
 		options: {
-			required: 'Password is required'
+			required: 'Пароль обязательный'
 		},
 		leftIcon: Lock
 	}

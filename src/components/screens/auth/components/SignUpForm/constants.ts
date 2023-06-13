@@ -5,8 +5,8 @@ import { RegisterFromData } from '@/types';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 
-export const SUCCESSFUL_REGISTRATION = 'Registration is successful!';
-export const INVALID_REGISTRATION = 'Error during registration!';
+export const SUCCESSFUL_REGISTRATION = 'Успеная решистрация!';
+export const INVALID_REGISTRATION = 'Ошибка при регистрации!';
 
 export const DEFAULT_VALUES = {
 	username: '',
@@ -21,7 +21,7 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 		type: 'text',
 		placeholder: 'Username',
 		options: {
-			required: 'Name is required'
+			required: 'Имя обязательное'
 		},
 		leftIcon: User
 	},
@@ -30,10 +30,10 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 		type: 'text',
 		placeholder: 'E-mail',
 		options: {
-			required: 'Email address is required',
+			required: 'Email обязательное',
 			pattern: {
 				value: emailReg,
-				message: 'Invalid email address'
+				message: 'Неверный email'
 			}
 		},
 		leftIcon: Email
@@ -41,12 +41,12 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 	{
 		id: 'contactPhone',
 		type: 'text',
-		placeholder: 'Contact phone',
+		placeholder: 'Контактный телефон',
 		options: {
-			required: 'Contact phone is required',
+			required: 'Контактный телефон обязательный',
 			pattern: {
 				value: phoneReg,
-				message: 'Invalid phone format (+375(33)333-33-33)'
+				message: 'Неверный формат телефона (+375(33)333-33-33)'
 			}
 		},
 		leftIcon: Phone
@@ -54,12 +54,12 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 	{
 		id: 'password',
 		type: 'password',
-		placeholder: 'Password',
+		placeholder: 'Пароль',
 		options: {
-			required: 'Password is required',
+			required: 'Пароль обязательный',
 			minLength: {
 				value: 10,
-				message: 'Password must be longer than or equal to 10 characters'
+				message: 'Пароль должен быть больше или равен 10 символам'
 			}
 		},
 		leftIcon: Lock

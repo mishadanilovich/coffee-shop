@@ -1,2 +1,2 @@
-export const INTRO_DESCRIPTION = 'New cafe format';
-export const INTRO_LINK_LABEL = 'Order coffee now';
+export const INTRO_DESCRIPTION = 'Кафе нового формата';
+export const INTRO_LINK_LABEL = 'Заказать сейчас';

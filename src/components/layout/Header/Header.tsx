@@ -27,7 +27,7 @@ export const Header = () => {
 			<Styled.Navigation navItems={NAV_ITEMS} />
 			<Styled.Actions>
 				{userData && <Styled.Username>{userData.username}</Styled.Username>}
-				<Dropdown content={[{ label: 'Logout', onClick: onClickLogout }]}>
+				<Dropdown content={[{ label: 'Выйти', onClick: onClickLogout }]}>
 					<Styled.AvatarContainer>
 						<Styled.Avatar />
 					</Styled.AvatarContainer>

@@ -1,3 +1,3 @@
-export const MENU_TITLE = 'Our ;$menu;';
+export const MENU_TITLE = 'Наше ;$Меню;';
 
-export const SEE_MORE = 'See more';
+export const SEE_MORE = 'Больше';

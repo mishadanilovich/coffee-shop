@@ -2,16 +2,16 @@ import { Car, Card, Cash, Phone, Store, User } from '@/components/icons';
 import { FormField } from '@/components/ui';
 import { Basket } from '@/types';
 
-export const BASKET_TITLE = 'Basket';
-export const BASKET_TOTAL_PRICE_LABEL = 'Total price:';
-export const EMPTY_BASKET = 'Basket is empty';
-export const EMPTY_BASKET_ERROR = 'Please choose any drink or dish before confirming the order';
+export const BASKET_TITLE = 'Корзина';
+export const BASKET_TOTAL_PRICE_LABEL = 'Цена:';
+export const EMPTY_BASKET = 'Пустая корзина';
+export const EMPTY_BASKET_ERROR =
+	'Пожалуйста, выберите любой напиток или любую еду перед подтверждением заказа';
 
-export const SUCCESSFUL_BASKET_SUBMIT =
-	'The order was successfully accepted. We are waiting for you!';
+export const SUCCESSFUL_BASKET_SUBMIT = 'Заказ был успешно принят. Мы ждем вас!';
 
-export const ORDER_DETAILS_FORM_TITLE = 'Details';
-export const ORDER_DETAILS_SUBMIT_BUTTON = 'Order now';
+export const ORDER_DETAILS_FORM_TITLE = 'Детали';
+export const ORDER_DETAILS_SUBMIT_BUTTON = 'Заказать';
 
 export const DEFAULT_VALUES = {
 	username: '',
@@ -25,45 +25,45 @@ export const ORDER_DETAILS_FORM_FIELDS: FormField<Omit<Basket, 'id'>>[] = [
 	{
 		id: 'username',
 		type: 'text',
-		placeholder: 'Name',
+		placeholder: 'Имя',
 		options: {
-			required: 'Name is required'
+			required: 'Имя обязательное'
 		},
 		leftIcon: User
 	},
 	{
 		id: 'contactPhone',
-		type: 'tel',
-		placeholder: 'Contact number',
+		type: 'text',
+		placeholder: 'Контактный телефон',
 		options: {
-			required: 'Contact number is required',
+			required: 'Контактный телефон обязательный',
 			pattern: {
 				value: phoneReg,
-				message: 'Invalid phone number format (+375(33)333-33-33)'
+				message: 'Неверный формат телефона (+375(33)333-33-33)'
 			}
 		},
 		leftIcon: Phone
 	},
 	{
 		id: 'deliveryMethod',
-		title: 'Pickup options',
+		title: 'Выберите способо доставки',
 		options: {
-			required: 'Required'
+			required: 'Обязательное'
 		},
 		pickerOptions: [
-			{ label: 'In store', optionValue: 'inStore', icon: Store },
+			{ label: 'В магазине', optionValue: 'inStore', icon: Store },
 			{ label: 'Drive-Thru', optionValue: 'driveThru', icon: Car }
 		]
 	},
 	{
 		id: 'paymentMethod',
-		title: 'Payment method',
+		title: 'Способ оплаты',
 		options: {
-			required: 'Payment method is required'
+			required: 'Способ оплаты обязательный'
 		},
 		pickerOptions: [
-			{ label: 'Card', optionValue: 'card', icon: Card },
-			{ label: 'Cash', optionValue: 'cash', icon: Cash }
+			{ label: 'Карта', optionValue: 'card', icon: Card },
+			{ label: 'Наличка', optionValue: 'cash', icon: Cash }
 		]
 	}
 ];

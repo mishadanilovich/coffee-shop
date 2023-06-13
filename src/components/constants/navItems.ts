@@ -3,31 +3,31 @@ import { ANCHORS } from './anchors';
 
 export const NAV_ITEMS = [
 	{
-		label: 'Home',
+		label: 'Главная',
 		href: `/#${ANCHORS.HOME}`
 	},
 	{
-		label: 'About Us',
+		label: 'О нас',
 		href: `/#${ANCHORS.ABOUT_US}`
 	},
 	{
-		label: 'Menu',
+		label: 'Меню',
 		href: ROUTE.MENU
 	},
 	{
-		label: 'Baristas',
+		label: 'Баристы',
 		href: `/#${ANCHORS.BARISTAS}`
 	},
 	{
-		label: 'Lessons',
+		label: 'Уроки',
 		href: `/#${ANCHORS.LESSONS}`
 	},
 	{
-		label: 'Contacts',
+		label: 'Контакты',
 		href: `/#${ANCHORS.CONTACTS}`
 	},
 	{
-		label: 'Blogs',
+		label: 'Блоги',
 		href: `/#${ANCHORS.BLOGS}`
 	}
 ];
