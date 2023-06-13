@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as StyledLink } from '@/components/ui';
 
 export const Container = styled.div`
 	display: flex;
@@ -36,6 +35,10 @@ export const Content = styled.div`
 	flex-direction: column;
 	padding: ${({ theme }) => theme.spacing(5)};
 	text-align: start;
+
+	.blog-link {
+		margin-top: auto;
+	}
 `;
 
 export const Title = styled.h4`
@@ -46,8 +49,4 @@ export const Description = styled.p`
 	${({ theme }) => theme.typography['16R']};
 	color: ${({ theme }) => theme.palette.beige};
 	margin-bottom: ${({ theme }) => theme.spacing(3)};
-`;
-
-export const Link = styled(StyledLink)`
-	margin-top: auto;
 `;

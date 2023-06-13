@@ -8,5 +8,6 @@ export enum LinkUse {
 
 export interface StyledLinkProps extends Omit<LinkProps, 'as'> {
 	use?: LinkUse;
+	className?: string;
 	children?: ReactNode;
 }
