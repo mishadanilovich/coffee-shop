@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Link } from '@/components/ui';
 
 import { BLOG_CARD_LINK_LABEL } from './constants';
 import { BlogCardProps } from './BlogCard.interface';
@@ -16,7 +15,7 @@ export const BlogCard = ({ data }: BlogCardProps) => {
 			<Styled.Content>
 				<Styled.Title>{title}</Styled.Title>
 				{description && <Styled.Description>{description}</Styled.Description>}
-				<Link href={blogUrl}>{BLOG_CARD_LINK_LABEL}</Link>
+				<Styled.Link href={blogUrl}>{BLOG_CARD_LINK_LABEL}</Styled.Link>
 			</Styled.Content>
 		</Styled.Container>
 	);

@@ -12,7 +12,7 @@ export const BaristaCard = ({ data }: BaristaCardProps) => {
 			<Styled.QuotationMark />
 			{quote && <Styled.Quote>{quote}</Styled.Quote>}
 			{avatar && <Styled.Avatar src={avatar} alt={baristaFullName} height={70} width={70} />}
-			<h3>{baristaFullName}</h3>
+			<h4>{baristaFullName}</h4>
 		</Styled.Container>
 	);
 };

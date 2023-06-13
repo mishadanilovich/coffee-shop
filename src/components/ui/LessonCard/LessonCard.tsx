@@ -11,7 +11,7 @@ export const LessonCard = ({ data }: LessonCardProps) => {
 
 	return (
 		<Styled.Lesson>
-			<Title content={title} type={TitleType.h3} />
+			<Title content={title} type={TitleType.h4} />
 			<Styled.Description>{description}</Styled.Description>
 			{youtubeId && <LiteYouTubeEmbed id={youtubeId} title="" />}
 		</Styled.Lesson>
