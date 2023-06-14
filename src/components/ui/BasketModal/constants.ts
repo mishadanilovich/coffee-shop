@@ -1,6 +1,7 @@
-import { Car, Card, Cash, Phone, Store, User } from '@/components/icons';
+import { Car, Card, Cash, Store } from '@/components/icons';
 import { FormField } from '@/components/ui';
 import { Basket } from '@/types';
+import { commonFormFields } from '@/components/constants';
 
 export const BASKET_TITLE = 'Корзина';
 export const BASKET_TOTAL_PRICE_LABEL = 'Цена:';
@@ -20,30 +21,9 @@ export const DEFAULT_VALUES = {
 	paymentMethod: 'cash'
 };
 
-const phoneReg = new RegExp('^\\+375\\((17|29|33|44)\\)[0-9]{3}-[0-9]{2}-[0-9]{2}$');
 export const ORDER_DETAILS_FORM_FIELDS: FormField<Omit<Basket, 'id'>>[] = [
-	{
-		id: 'username',
-		type: 'text',
-		placeholder: 'Имя',
-		options: {
-			required: 'Имя обязательное'
-		},
-		leftIcon: User
-	},
-	{
-		id: 'contactPhone',
-		type: 'text',
-		placeholder: 'Контактный телефон',
-		options: {
-			required: 'Контактный телефон обязательный',
-			pattern: {
-				value: phoneReg,
-				message: 'Неверный формат телефона (+375(33)333-33-33)'
-			}
-		},
-		leftIcon: Phone
-	},
+	commonFormFields['username'],
+	commonFormFields['contactPhone'],
 	{
 		id: 'deliveryMethod',
 		title: 'Выберите способо доставки',

@@ -1,6 +1,6 @@
 import { InputFormField } from '@/components/ui';
-import { Email, Lock, Phone, User } from '@/components/icons';
-import { emailReg, phoneReg } from '@/components/constants';
+import { Lock } from '@/components/icons';
+import { commonFormFields } from '@/components/constants';
 import { RegisterFromData } from '@/types';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
@@ -16,41 +16,9 @@ export const DEFAULT_VALUES = {
 };
 
 export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
-	{
-		id: 'username',
-		type: 'text',
-		placeholder: 'Username',
-		options: {
-			required: 'Имя обязательное'
-		},
-		leftIcon: User
-	},
-	{
-		id: 'email',
-		type: 'text',
-		placeholder: 'E-mail',
-		options: {
-			required: 'Email обязательное',
-			pattern: {
-				value: emailReg,
-				message: 'Неверный email'
-			}
-		},
-		leftIcon: Email
-	},
-	{
-		id: 'contactPhone',
-		type: 'text',
-		placeholder: 'Контактный телефон',
-		options: {
-			required: 'Контактный телефон обязательный',
-			pattern: {
-				value: phoneReg,
-				message: 'Неверный формат телефона (+375(33)333-33-33)'
-			}
-		},
-		leftIcon: Phone
-	},
+	commonFormFields['username'],
+	commonFormFields['email'],
+	commonFormFields['contactPhone'],
 	{
 		id: 'password',
 		type: 'password',

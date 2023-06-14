@@ -1,6 +1,6 @@
 import { InputFormField } from '@/components/ui';
-import { Email, Lock } from '@/components/icons';
-import { emailReg } from '@/components/constants';
+import { Lock } from '@/components/icons';
+import { commonFormFields } from '@/components/constants';
 import { LoginFormData } from '@/types';
 
 export const LOGIN_SUBMIT_BUTTON = 'Войти';
@@ -14,19 +14,7 @@ export const DEFAULT_VALUES = {
 };
 
 export const LOGIN_FORM_FIELDS: InputFormField<LoginFormData>[] = [
-	{
-		id: 'email',
-		type: 'text',
-		placeholder: 'E-mail',
-		options: {
-			required: 'Email обязательный',
-			pattern: {
-				value: emailReg,
-				message: 'Неверный email'
-			}
-		},
-		leftIcon: Email
-	},
+	commonFormFields['email'],
 	{
 		id: 'password',
 		type: 'password',
