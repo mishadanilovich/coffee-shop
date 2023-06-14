@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Loader, Minus, Plus } from '@/components/icons';
-import { CURRENCY } from '@/components/constants';
+import { CURRENCY, FALLBACK_MENU_IMAGE_SRC } from '@/components/constants';
 
 import { BasketItemCardProps } from './BasketItemCard.interface';
 
@@ -16,6 +16,8 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 		menuItemId
 	} = data;
 
+	const [basketImageSrc, setBasketImageSrc] = useState(image || FALLBACK_MENU_IMAGE_SRC);
+
 	const handleIncreaseButton = async (
 		onClick: BasketItemCardProps['handleIncrease'] | BasketItemCardProps['handleDecrease']
 	) => {
@@ -26,7 +28,13 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 
 	return (
 		<Styled.Container>
-			<Styled.StyledImage src={image} alt={title} width={80} height={80} />
+			<Styled.StyledImage
+				src={basketImageSrc}
+				alt={title}
+				width={80}
+				height={80}
+				onError={() => setBasketImageSrc(FALLBACK_MENU_IMAGE_SRC)}
+			/>
 			<Styled.Content>
 				<Styled.Title>{title}</Styled.Title>
 				{description && <Styled.Description>{description}</Styled.Description>}

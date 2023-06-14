@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui';
-import { CURRENCY } from '@/components/constants';
+import { CURRENCY, FALLBACK_MENU_IMAGE_SRC } from '@/components/constants';
 
 import { MenuCardProps } from './MenuCard.interface';
-import { BUTTON_LABEL, FALLBACK_SRC } from './constants';
+import { BUTTON_LABEL } from './constants';
 
 import * as Styled from './MenuCard.styled';
 
@@ -12,7 +12,7 @@ export const MenuCard = ({ data, handleAddButton }: MenuCardProps) => {
 
 	const { id, image, title, description, price } = data;
 
-	const [menuImageSrc, setMenuImageSrc] = useState(image || FALLBACK_SRC);
+	const [menuImageSrc, setMenuImageSrc] = useState(image || FALLBACK_MENU_IMAGE_SRC);
 
 	const handleButtonClick = async () => {
 		setIsLoading(true);
@@ -27,7 +27,7 @@ export const MenuCard = ({ data, handleAddButton }: MenuCardProps) => {
 				alt={title}
 				width={100}
 				height={100}
-				onError={() => setMenuImageSrc(FALLBACK_SRC)}
+				onError={() => setMenuImageSrc(FALLBACK_MENU_IMAGE_SRC)}
 			/>
 			<Styled.Title>{title}</Styled.Title>
 			{description && <Styled.Description>{description}</Styled.Description>}
