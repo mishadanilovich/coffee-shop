@@ -13,3 +13,5 @@ export * from './routes';
 export * from './anchors';
 export * from './regex';
 export * from './commonFormFields';
+export * from './paymentMethod';
+export * from './deliveryMethod';

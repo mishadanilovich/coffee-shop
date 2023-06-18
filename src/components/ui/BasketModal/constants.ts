@@ -1,7 +1,7 @@
 import { Car, Card, Cash, Store } from '@/components/icons';
 import { FormField } from '@/components/ui';
 import { Basket } from '@/types';
-import { commonFormFields } from '@/components/constants';
+import { commonFormFields, DELIVERY_METHOD, PAYMENT_METHOD } from '@/components/constants';
 
 export const BASKET_TITLE = 'Корзина';
 export const BASKET_TOTAL_PRICE_LABEL = 'Цена:';
@@ -17,8 +17,8 @@ export const ORDER_DETAILS_SUBMIT_BUTTON = 'Заказать';
 export const DEFAULT_VALUES = {
 	username: '',
 	contactPhone: '',
-	deliveryMethod: 'inStore',
-	paymentMethod: 'cash'
+	deliveryMethod: DELIVERY_METHOD.IN_STORE,
+	paymentMethod: PAYMENT_METHOD.CASH
 };
 
 export const ORDER_DETAILS_FORM_FIELDS: FormField<Omit<Basket, 'id'>>[] = [
@@ -31,8 +31,8 @@ export const ORDER_DETAILS_FORM_FIELDS: FormField<Omit<Basket, 'id'>>[] = [
 			required: 'Обязательное'
 		},
 		pickerOptions: [
-			{ label: 'В магазине', optionValue: 'inStore', icon: Store },
-			{ label: 'Drive-Thru', optionValue: 'driveThru', icon: Car }
+			{ label: 'В магазине', optionValue: DELIVERY_METHOD.IN_STORE, icon: Store },
+			{ label: 'Drive-Thru', optionValue: DELIVERY_METHOD.DRIVE_THRU, icon: Car }
 		]
 	},
 	{
@@ -42,8 +42,19 @@ export const ORDER_DETAILS_FORM_FIELDS: FormField<Omit<Basket, 'id'>>[] = [
 			required: 'Способ оплаты обязательный'
 		},
 		pickerOptions: [
-			{ label: 'Карта', optionValue: 'card', icon: Card },
-			{ label: 'Наличка', optionValue: 'cash', icon: Cash }
+			{ label: 'Карта', optionValue: PAYMENT_METHOD.CARD, icon: Card },
+			{ label: 'Наличка', optionValue: PAYMENT_METHOD.CASH, icon: Cash }
 		]
+	},
+	{
+		id: 'card-element',
+		isCard: true,
+		options: {
+			hidePostalCode: true
+		},
+		relatedField: {
+			field: 'paymentMethod',
+			value: PAYMENT_METHOD.CARD
+		}
 	}
 ];
