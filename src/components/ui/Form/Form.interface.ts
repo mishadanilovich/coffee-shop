@@ -1,4 +1,5 @@
-import { FieldValues, Path, RegisterOptions } from 'react-hook-form';
+import { FieldValues, Path, PathValue, RegisterOptions } from 'react-hook-form';
+import { CardElementProps } from '@stripe/react-stripe-js';
 import { DataPickerProps, InputProps } from '@/components/ui';
 
 export enum FormTheme {
@@ -6,9 +7,20 @@ export enum FormTheme {
 	white = 'white'
 }
 
+interface RelatedField<FormData extends FieldValues> {
+	field: Path<FormData>;
+	value: PathValue<FormData, Path<FormData>>;
+}
+
 interface CommonFormField<FormData extends FieldValues> {
 	id: Path<FormData>;
 	options?: RegisterOptions<FormData, Path<FormData>>;
+	relatedField?: RelatedField<FormData>;
+}
+
+export interface CardFormField<FormData extends FieldValues> extends CardElementProps {
+	isCard: boolean;
+	relatedField?: RelatedField<FormData>;
 }
 
 export interface InputFormField<FormData extends FieldValues>
@@ -21,7 +33,8 @@ export interface DataPickerFromField<FormData extends FieldValues>
 
 export type FormField<FormData extends FieldValues> =
 	| InputFormField<FormData>
-	| DataPickerFromField<FormData>;
+	| DataPickerFromField<FormData>
+	| CardFormField<FormData>;
 
 export interface FormProps<FormData extends FieldValues> {
 	title?: string;

@@ -13,7 +13,7 @@ export const Header = () => {
 	const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);
 
 	const { GetUser, GetBasket } = useFetch();
-	const { data: userData } = GetUser();
+	const { data: { username, contactPhone } = {} } = GetUser();
 	const { data: basketData } = GetBasket();
 
 	const onClickLogout = () => {
@@ -26,7 +26,7 @@ export const Header = () => {
 			<Styled.Logo src="/logo.png" alt="Logo" width={60} height={60} />
 			<Styled.Navigation navItems={NAV_ITEMS} />
 			<Styled.Actions>
-				{userData && <Styled.Username>{userData.username}</Styled.Username>}
+				{username && <Styled.Username>{username}</Styled.Username>}
 				<Dropdown content={[{ label: 'Выйти', onClick: onClickLogout }]}>
 					<Styled.AvatarContainer>
 						<Styled.Avatar />
@@ -42,6 +42,7 @@ export const Header = () => {
 				<BasketModal
 					isOpen={isStoreModalOpen}
 					handleClose={() => setIsStoreModalOpen(false)}
+					user={{ username, contactPhone }}
 				/>
 			)}
 		</Styled.Header>

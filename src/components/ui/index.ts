@@ -19,3 +19,4 @@ export * from './DataPicker';
 export * from './Tabs';
 export * from './Notification';
 export * from './Dropdown';
+export * from './PaymentGateway';

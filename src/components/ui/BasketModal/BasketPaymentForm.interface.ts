@@ -1,7 +1,6 @@
 import { User } from '@/types';
 
-export interface BasketModalProps {
+export interface BasketPaymentFormProps {
 	user?: Partial<Pick<User, 'username' | 'contactPhone'>>;
-	isOpen: boolean;
-	handleClose: () => void;
+	handleBasketModalClose: () => void;
 }

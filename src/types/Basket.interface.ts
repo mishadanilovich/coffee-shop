@@ -1,4 +1,5 @@
 import { MenuItem } from '@/types';
+import { PAYMENT_METHOD } from '@/components/constants';
 
 export interface BasketItem {
 	basketId: string;
@@ -13,7 +14,7 @@ export interface Basket {
 	username?: string;
 	contactPhone?: string;
 	deliveryMethod?: string;
-	paymentMethod?: string;
+	paymentMethod?: PAYMENT_METHOD;
 	totalPrice?: number;
 	items?: BasketItem[];
 }
