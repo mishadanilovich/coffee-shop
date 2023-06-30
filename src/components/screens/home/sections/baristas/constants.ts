@@ -1,1 +1,1 @@
-export const BARISTAS_TITLE = 'Наши ;$Баристы;';
+export const BARISTAS_TITLE = 'Our ;$baristas;';

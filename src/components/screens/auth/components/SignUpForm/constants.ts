@@ -5,8 +5,8 @@ import { RegisterFromData } from '@/types';
 
 export const SIGN_UP_SUBMIT_BUTTON = 'Sign up';
 
-export const SUCCESSFUL_REGISTRATION = 'Успеная решистрация!';
-export const INVALID_REGISTRATION = 'Ошибка при регистрации!';
+export const SUCCESSFUL_REGISTRATION = 'Registration is successful!';
+export const INVALID_REGISTRATION = 'Error during registration!';
 
 export const DEFAULT_VALUES = {
 	username: '',
