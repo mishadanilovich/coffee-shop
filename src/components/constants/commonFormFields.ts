@@ -6,12 +6,12 @@ export const commonFormFields = {
 	contactPhone: {
 		id: 'contactPhone' as const,
 		type: 'text',
-		placeholder: 'Контактный телефон',
+		placeholder: 'Contact phone',
 		options: {
-			required: 'Контактный телефон обязательный',
+			required: 'Contact phone is required',
 			pattern: {
 				value: phoneReg,
-				message: 'Неверный формат телефона (+375(33)333-33-33)'
+				message: 'Invalid phone format (+375(33)333-33-33)'
 			}
 		},
 		leftIcon: Phone
@@ -21,10 +21,10 @@ export const commonFormFields = {
 		type: 'text',
 		placeholder: 'E-mail',
 		options: {
-			required: 'Email обязательный',
+			required: 'Email is required',
 			pattern: {
 				value: emailReg,
-				message: 'Неверный email'
+				message: 'Invalid email'
 			}
 		},
 		leftIcon: Email
@@ -32,9 +32,9 @@ export const commonFormFields = {
 	username: {
 		id: 'username' as const,
 		type: 'text',
-		placeholder: 'Имя',
+		placeholder: 'Name',
 		options: {
-			required: 'Имя обязательное'
+			required: 'Name is required'
 		},
 		leftIcon: UserIcon
 	}
