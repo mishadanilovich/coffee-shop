@@ -22,12 +22,12 @@ export const SIGN_UP_FORM_FIELDS: InputFormField<RegisterFromData>[] = [
 	{
 		id: 'password',
 		type: 'password',
-		placeholder: 'Пароль',
+		placeholder: 'Password',
 		options: {
-			required: 'Пароль обязательный',
+			required: 'Password is required',
 			minLength: {
 				value: 10,
-				message: 'Пароль должен быть больше или равен 10 символам'
+				message: 'The password must be greater than or equal to 10 characters'
 			}
 		},
 		leftIcon: Lock

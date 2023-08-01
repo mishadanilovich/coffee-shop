@@ -1,6 +1,6 @@
 import { LoginForm, SignUpForm } from './components';
 
-export const AUTH_TITLE = 'Аутентификация';
+export const AUTH_TITLE = 'Authentication';
 
 export const AUTH_TABS = [
 	{
