@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { ReactPortal } from '@/components/ui';
 import { Menu } from '@/components/icons';
 
-import { NavigationProps, NavItem } from './Navigation.interface';
+import { NavigationProps } from './Navigation.interface';
+import type { NavItem as NavItemType } from './Navigation.interface';
 
 import * as Styled from './Navigation.styled';
 
@@ -11,7 +12,7 @@ export const MobileNavigation = ({ navItems, className }: NavigationProps) => {
 
 	const handleToggle = () => setIsOpen(prevState => !prevState);
 
-	const NavItem = ({ href, label, onClick, ...rest }: NavItem) => {
+	const NavItem = ({ href, label, onClick, ...rest }: NavItemType) => {
 		const handleNavClick = () => {
 			onClick?.();
 			handleToggle();
@@ -30,7 +31,20 @@ export const MobileNavigation = ({ navItems, className }: NavigationProps) => {
 
 	return (
 		<>
-			<Menu className={className} onClick={handleToggle} />
+			<Menu
+				className={className}
+				role="button"
+				tabIndex={0}
+				aria-label={isOpen ? 'Close menu' : 'Open menu'}
+				aria-expanded={isOpen}
+				onClick={handleToggle}
+				onKeyDown={event => {
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						handleToggle();
+					}
+				}}
+			/>
 			{isOpen && (
 				<ReactPortal wrapperId="mobile-menu-react-portal">
 					<>

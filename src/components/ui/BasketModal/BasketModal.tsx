@@ -33,7 +33,18 @@ export const BasketModal = ({ isOpen, handleClose, user }: BasketModalProps) => 
 						<Styled.TotalPrice>{`${BASKET_TOTAL_PRICE_LABEL} ${totalPrice?.toFixed(
 							2
 						)} ${CURRENCY}`}</Styled.TotalPrice>
-						<Styled.Cross onClick={handleClose} />
+						<Styled.Cross
+							role="button"
+							tabIndex={0}
+							aria-label="Close basket"
+							onClick={handleClose}
+							onKeyDown={event => {
+								if (event.key === 'Enter' || event.key === ' ') {
+									event.preventDefault();
+									handleClose();
+								}
+							}}
+						/>
 					</Styled.TitleContainer>
 					<Styled.Content>
 						<Styled.Basket empty={!basketItems?.length}>

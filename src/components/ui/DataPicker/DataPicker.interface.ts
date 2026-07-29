@@ -1,5 +1,5 @@
 import { FunctionComponent, SVGProps } from 'react';
-import { FieldError } from 'react-hook-form/dist/types';
+import { FieldError } from 'react-hook-form';
 
 type DataPickerValue = string | null;
 

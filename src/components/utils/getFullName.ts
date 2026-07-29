@@ -9,7 +9,7 @@ export const getFullName = (fullName: string): string => {
 	if (!fullName) {
 		return '';
 	}
-	const [given, family] = fullName.trim().split(' ');
+	const [given, family] = fullName.trim().replace(/\s+/g, ' ').split(' ');
 
 	const firstName = wordsCapitalize(given);
 	const lastName = family ? wordsCapitalize(family) : '';

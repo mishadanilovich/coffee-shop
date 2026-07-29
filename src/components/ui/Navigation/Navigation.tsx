@@ -1,8 +1,9 @@
-import { NavigationProps, NavItem } from './Navigation.interface';
+import { NavigationProps } from './Navigation.interface';
+import type { NavItem as NavItemType } from './Navigation.interface';
 
 import * as Styled from './Navigation.styled';
 
-const NavItem = ({ href, label, ...rest }: NavItem) => {
+const NavItem = ({ href, label, ...rest }: NavItemType) => {
 	return href ? (
 		<Styled.NavLink href={href} {...rest} scroll={false}>
 			{label}

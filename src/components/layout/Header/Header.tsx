@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { BasketModal, Dropdown } from '@/components/ui';
 import { useFetch } from '@/components/hooks';
 import { NAV_ITEMS, ROUTE } from '@/components/constants';
@@ -28,13 +28,24 @@ export const Header = () => {
 			<Styled.Actions>
 				{username && <Styled.Username>{username}</Styled.Username>}
 				<Dropdown content={[{ label: 'Logout', onClick: onClickLogout }]}>
-					<Styled.AvatarContainer>
+					<Styled.AvatarContainer aria-label="User menu">
 						<Styled.Avatar />
 					</Styled.AvatarContainer>
 				</Dropdown>
 				<Styled.StoreContainer>
 					{!!basketData?.items?.length && <Styled.Counter />}
-					<Styled.Store onClick={() => setIsStoreModalOpen(!isStoreModalOpen)} />
+					<Styled.Store
+						role="button"
+						tabIndex={0}
+						aria-label="Open basket"
+						onClick={() => setIsStoreModalOpen(!isStoreModalOpen)}
+						onKeyDown={event => {
+							if (event.key === 'Enter' || event.key === ' ') {
+								event.preventDefault();
+								setIsStoreModalOpen(!isStoreModalOpen);
+							}
+						}}
+					/>
 				</Styled.StoreContainer>
 				<Styled.MobileNavigation navItems={NAV_ITEMS} />
 			</Styled.Actions>

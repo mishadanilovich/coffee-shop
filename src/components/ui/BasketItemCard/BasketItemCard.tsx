@@ -40,6 +40,7 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 				{description && <Styled.Description>{description}</Styled.Description>}
 				<Styled.ActionsContainer>
 					<Styled.ActionsButton
+						aria-label="Decrease quantity"
 						disabled={isLoading}
 						onClick={() => handleIncreaseButton(handleDecrease)}
 					>
@@ -47,6 +48,7 @@ export const BasketItemCard = ({ data, handleIncrease, handleDecrease }: BasketI
 					</Styled.ActionsButton>
 					{isLoading ? <Loader height={22} width={22} /> : <span>{count}</span>}
 					<Styled.ActionsButton
+						aria-label="Increase quantity"
 						disabled={isLoading}
 						onClick={() => handleIncreaseButton(handleIncrease)}
 					>

@@ -2,35 +2,45 @@
   "name": "coffee-shop",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
-    "@types/node": "18.15.10",
-    "@types/react": "18.0.30",
-    "@types/react-dom": "18.0.11",
+    "@types/node": "18.19.130",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
     "axios": "^1.4.0",
-    "next": "13.2.4",
+    "next": "13.5.11",
     "nookies": "^2.5.2",
     "notiflix": "^3.2.6",
     "rc-dropdown": "^4.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-hook-form": "^7.43.9",
     "react-lite-youtube-embed": "^2.3.52",
     "sharp": "^0.32.1",
     "styled-components": "^5.3.9",
     "swiper": "^9.2.0",
     "swr": "^2.1.5",
-    "typescript": "*"
+    "typescript": "^5.0.2"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "eslint": "^8.0.1",
@@ -40,6 +50,8 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
     "prettier": "^2.8.4"
   }
 }

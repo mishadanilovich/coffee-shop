@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /auth
+
+Sitemap: https://coffee-shop.example.com/sitemap.xml
