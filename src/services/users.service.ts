@@ -1,10 +1,11 @@
-import axios from '@/core/axios';
+import { AxiosInstance } from 'axios';
+import clientAxios from '@/core/axios';
 import { UpdateUser, User } from '@/types';
 
-export const getMe = async (): Promise<User> => {
-	return (await axios.get('users/me')).data;
+export const getMe = async (instance: AxiosInstance = clientAxios): Promise<User> => {
+	return (await instance.get('users/me')).data;
 };
 
-export const updateMe = async (updateUser: UpdateUser) => {
-	return await axios.patch('users/me', updateUser);
+export const updateMe = async (updateUser: UpdateUser, instance: AxiosInstance = clientAxios) => {
+	return await instance.patch('users/me', updateUser);
 };

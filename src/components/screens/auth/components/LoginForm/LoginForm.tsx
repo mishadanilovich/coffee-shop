@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { setCookie } from 'nookies';
 import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { LoginFormData } from '@/types';
 import { ROUTE } from '@/components/constants';
@@ -19,11 +18,7 @@ export const LoginForm = () => {
 
 	const onFormSubmit = async (data: LoginFormData) => {
 		try {
-			const { token } = await Services.auth.login(data);
-
-			setCookie(null, '_token', token, {
-				path: '/'
-			});
+			await Services.auth.login(data);
 
 			router.push(ROUTE.HOME);
 

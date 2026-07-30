@@ -1,10 +1,14 @@
-import axios from '@/core/axios';
+import { AxiosInstance } from 'axios';
+import clientAxios from '@/core/axios';
 import { Category, CategoryType } from '@/types';
 
-export const getMenu = async (): Promise<Category[]> => {
-	return (await axios.get(`menu`)).data;
+export const getMenu = async (instance: AxiosInstance = clientAxios): Promise<Category[]> => {
+	return (await instance.get(`menu`)).data;
 };
 
-export const getCategory = async (type: CategoryType): Promise<Category> => {
-	return (await axios.get(`menu/category/${type}`)).data;
+export const getCategory = async (
+	type: CategoryType,
+	instance: AxiosInstance = clientAxios
+): Promise<Category> => {
+	return (await instance.get(`menu/category/${type}`)).data;
 };

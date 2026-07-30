@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { setCookie } from 'nookies';
 import { Form, FormTheme, Notification, NotificationType } from '@/components/ui';
 import { RegisterFromData } from '@/types';
 import { ROUTE } from '@/components/constants';
@@ -20,13 +19,7 @@ export const SignUpForm = () => {
 
 	const onFormSubmit = async (data: RegisterFromData) => {
 		try {
-			const { token } = await Services.auth.register(
-				removeEmptyFields<RegisterFromData>(data)
-			);
-
-			setCookie(null, '_token', token, {
-				path: '/'
-			});
+			await Services.auth.register(removeEmptyFields<RegisterFromData>(data));
 
 			Notification({
 				type: NotificationType.success,

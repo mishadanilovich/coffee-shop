@@ -30,9 +30,11 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 		return authProps;
 	}
 
+	const { serverAxios } = authProps;
+
 	try {
-		const menu = await Services.menu.getMenu();
-		const basket = await Services.basket.getCurrent();
+		const menu = await Services.menu.getMenu(serverAxios);
+		const basket = await Services.basket.getCurrent(serverAxios);
 
 		return {
 			props: {

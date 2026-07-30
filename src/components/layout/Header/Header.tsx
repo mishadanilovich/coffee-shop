@@ -16,8 +16,8 @@ export const Header = () => {
 	const { data: { username, contactPhone } = {} } = GetUser();
 	const { data: basketData } = GetBasket();
 
-	const onClickLogout = () => {
-		Services.auth.logout();
+	const onClickLogout = async () => {
+		await Services.auth.logout();
 		router.push(ROUTE.AUTH);
 	};
 

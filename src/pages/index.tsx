@@ -32,12 +32,14 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 		return authProps;
 	}
 
+	const { serverAxios } = authProps;
+
 	try {
-		const { menu } = await Services.menu.getCategory(CategoryType.coffee);
-		const basket = await Services.basket.getCurrent();
-		const baristas = await Services.home.getBaristas();
-		const lessons = await Services.home.getLessons();
-		const blogs = await Services.home.getBlogs();
+		const { menu } = await Services.menu.getCategory(CategoryType.coffee, serverAxios);
+		const basket = await Services.basket.getCurrent(serverAxios);
+		const baristas = await Services.home.getBaristas(serverAxios);
+		const lessons = await Services.home.getLessons(serverAxios);
+		const blogs = await Services.home.getBlogs(serverAxios);
 
 		return {
 			props: {

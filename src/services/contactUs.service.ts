@@ -1,6 +1,7 @@
+import { AxiosInstance } from 'axios';
 import { ContactUsData } from '@/types';
-import axios from '@/core/axios';
+import clientAxios from '@/core/axios';
 
-export const sendEmail = async (values: ContactUsData) => {
-	await axios.post('/applications/create', values);
+export const sendEmail = async (values: ContactUsData, instance: AxiosInstance = clientAxios) => {
+	await instance.post('/applications/create', values);
 };
