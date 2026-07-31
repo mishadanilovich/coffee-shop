@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { BasketModal, Dropdown } from '@/components/ui';
+import { BasketModal, Dropdown, Link, LinkUse } from '@/components/ui';
 import { useFetch } from '@/components/hooks';
 import { NAV_ITEMS, ROUTE } from '@/components/constants';
 
@@ -13,8 +13,9 @@ export const Header = () => {
 	const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);
 
 	const { GetUser, GetBasket } = useFetch();
-	const { data: { username, contactPhone } = {} } = GetUser();
+	const { data: user } = GetUser();
 	const { data: basketData } = GetBasket();
+	const { username, contactPhone } = user ?? {};
 
 	const onClickLogout = async () => {
 		await Services.auth.logout();
@@ -27,11 +28,17 @@ export const Header = () => {
 			<Styled.Navigation navItems={NAV_ITEMS} />
 			<Styled.Actions>
 				{username && <Styled.Username>{username}</Styled.Username>}
-				<Dropdown content={[{ label: 'Logout', onClick: onClickLogout }]}>
-					<Styled.AvatarContainer aria-label="User menu">
-						<Styled.Avatar />
-					</Styled.AvatarContainer>
-				</Dropdown>
+				{user ? (
+					<Dropdown content={[{ label: 'Logout', onClick: onClickLogout }]}>
+						<Styled.AvatarContainer aria-label="User menu">
+							<Styled.Avatar />
+						</Styled.AvatarContainer>
+					</Dropdown>
+				) : (
+					<Link href={ROUTE.AUTH} use={LinkUse.secondary}>
+						Login
+					</Link>
+				)}
 				<Styled.StoreContainer>
 					{!!basketData?.items?.length && <Styled.Counter />}
 					<Styled.Store
