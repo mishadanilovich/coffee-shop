@@ -1,56 +1,33 @@
-import { GetServerSidePropsContext, NextPage } from 'next';
-import { SWRConfig } from 'swr';
-import { User } from '@/types';
+import { GetStaticProps, NextPage } from 'next';
 import { Layout } from '@/components/layout';
 import { Menu } from '@/components/screens';
-import { checkAuth } from '@/components/utils';
-import { ROUTE } from '@/components/constants';
+import { createServerAxios } from '@/core/serverAxios';
 
 import * as Services from '@/services';
 import { MenuProps } from '@/components/screens/menu/Menu.interface';
 
-interface MenuPageProps extends MenuProps {
-	fallback?: { [key: string]: User };
-}
-
-const MenuPage: NextPage<MenuPageProps> = ({ fallback, menu }) => {
+const MenuPage: NextPage<MenuProps> = ({ menu }) => {
 	return (
-		<SWRConfig value={{ fallback }}>
-			<Layout title="Menu" description="Menu">
-				<Menu menu={menu} />
-			</Layout>
-		</SWRConfig>
+		<Layout title="Menu" description="Menu">
+			<Menu menu={menu} />
+		</Layout>
 	);
 };
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-	const authProps = await checkAuth(ctx);
-
-	if ('redirect' in authProps) {
-		return authProps;
-	}
-
-	const { serverAxios } = authProps;
+export const getStaticProps: GetStaticProps<MenuProps> = async () => {
+	const serverAxios = createServerAxios();
 
 	try {
 		const menu = await Services.menu.getMenu(serverAxios);
-		const basket = await Services.basket.getCurrent(serverAxios);
 
 		return {
-			props: {
-				fallback: {
-					'/user': authProps.user,
-					'/basket': basket
-				},
-				menu
-			}
+			props: { menu },
+			revalidate: 60
 		};
 	} catch (err) {
 		return {
-			redirect: {
-				destination: ROUTE.BAD_PAGE,
-				permanent: false
-			}
+			props: { menu: [] },
+			revalidate: 60
 		};
 	}
 };

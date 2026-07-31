@@ -1,64 +1,49 @@
-import { GetServerSidePropsContext, NextPage } from 'next';
-import { SWRConfig } from 'swr';
-import { CategoryType, User } from '@/types';
+import { GetStaticProps, NextPage } from 'next';
+import { CategoryType } from '@/types';
 import { Home, HomeProps } from '@/components/screens';
 import { Layout } from '@/components/layout';
-import { checkAuth } from '@/components/utils';
-import { ROUTE } from '@/components/constants';
+import { createServerAxios } from '@/core/serverAxios';
 
 import * as Services from '@/services';
 
-interface HomePageProps extends HomeProps {
-	fallback?: { [key: string]: User };
-}
-
-const HomePage: NextPage<HomePageProps> = ({ fallback, ...homeProps }) => {
+const HomePage: NextPage<HomeProps> = homeProps => {
 	return (
-		<SWRConfig value={{ fallback }}>
-			<Layout
-				title="Home"
-				description="We prepare healthy food and desserts. Our baristas make coffee with a soul. And we have breakfast all day."
-			>
-				<Home {...homeProps} />
-			</Layout>
-		</SWRConfig>
+		<Layout
+			title="Home"
+			description="We prepare healthy food and desserts. Our baristas make coffee with a soul. And we have breakfast all day."
+		>
+			<Home {...homeProps} />
+		</Layout>
 	);
 };
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-	const authProps = await checkAuth(ctx);
-
-	if ('redirect' in authProps) {
-		return authProps;
-	}
-
-	const { serverAxios } = authProps;
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+	const serverAxios = createServerAxios();
 
 	try {
 		const { menu } = await Services.menu.getCategory(CategoryType.coffee, serverAxios);
-		const basket = await Services.basket.getCurrent(serverAxios);
 		const baristas = await Services.home.getBaristas(serverAxios);
 		const lessons = await Services.home.getLessons(serverAxios);
 		const blogs = await Services.home.getBlogs(serverAxios);
 
 		return {
 			props: {
-				fallback: {
-					'/user': authProps.user,
-					'/basket': basket
-				},
 				menu,
 				baristas,
 				lessons,
 				blogs
-			}
+			},
+			revalidate: 60
 		};
 	} catch (err) {
 		return {
-			redirect: {
-				destination: ROUTE.BAD_PAGE,
-				permanent: false
-			}
+			props: {
+				menu: [],
+				baristas: [],
+				lessons: [],
+				blogs: []
+			},
+			revalidate: 60
 		};
 	}
 };
