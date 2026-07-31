@@ -55,11 +55,9 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 		};
 	} catch (err) {
 		return {
-			props: {
-				redirect: {
-					destination: ROUTE.BAD_PAGE,
-					permanent: false
-				}
+			redirect: {
+				destination: ROUTE.BAD_PAGE,
+				permanent: false
 			}
 		};
 	}
